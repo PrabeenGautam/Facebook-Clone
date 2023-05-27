@@ -1,7 +1,9 @@
+import LoginPage from "./pages/auth/Login.page";
+
 function App() {
   return (
     <>
-      <div className="bg-green-500 h-96"></div>
+      <LoginPage />
     </>
   );
 }

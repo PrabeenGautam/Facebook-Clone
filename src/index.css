@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #1b74e4;
+  --primary-box-shadow: 0 0 0 2px #e7f3ff;
+  --btn-login-color: #36a420;
+}
