@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import fullLogo from "@/assets/svg/fb-logo-full.svg";
 import useTitle from "@/hooks/useTitle";
 
@@ -51,7 +50,7 @@ function LoginPage() {
           </Link>
           <hr className="my-6 border border-gray-200" />
           <div className="my-4 flex justify-center">
-            <button className="btn  w-fit bg-[#42b72a] px-4 py-3 font-bold text-white transition duration-500 ease-in-out hover:bg-[#36a420]">
+            <button className="btn w-fit bg-[#42b72a] px-4 py-3 font-bold text-white transition duration-500 ease-in-out hover:bg-[#36a420]">
               Create new account
             </button>
           </div>
