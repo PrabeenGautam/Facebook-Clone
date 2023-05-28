@@ -5,9 +5,9 @@ import { ModalProps } from "../../types/modal/modal.types";
 
 function ModalContent(props: ModalProps) {
   return (
-    <div className="modal fixed inset-0 z-50 flex w-full justify-center bg-[rgba(0,0,0,0.5)] backdrop-blur-sm">
+    <div className="modal fixed inset-0 z-50 flex w-full justify-center bg-[rgba(255,255,255,0.2)] backdrop-blur-sm">
       <div
-        className={`modal-container mx-6 mt-44 h-fit animate-fade-up bg-white shadow-md ${props.contentClassName}`}
+        className={`modal-container custom-shadow mx-6 mt-44 h-fit animate-fade-up rounded-lg bg-white ${props.contentClassName} `}
       >
         {/* Heading Sections  */}
         <div className="header flex justify-between border-b-2 p-4">
@@ -16,7 +16,7 @@ function ModalContent(props: ModalProps) {
               {props.heading}
             </span>
             {props.subheading && (
-              <span className="secondary text-sm/[24px] text-[#606770]">
+              <span className="secondary mt-1 text-[#6067701] ">
                 {props.subheading}
               </span>
             )}
@@ -30,7 +30,7 @@ function ModalContent(props: ModalProps) {
         </div>
 
         {/* Content Section  */}
-        <div className="content">{props.children}</div>
+        <div className="content p-4">{props.children}</div>
       </div>
     </div>
   );
