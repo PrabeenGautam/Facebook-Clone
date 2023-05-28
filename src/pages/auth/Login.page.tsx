@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 import fullLogo from "@/assets/svg/fb-logo-full.svg";
+import useTitle from "@/hooks/useTitle";
 
 function LoginPage() {
-  useEffect(() => {
-    document.title = "Facebook - log in or sign up";
-  }, []);
+  useTitle("Facebook - log in or sign up");
 
   return (
-    <section className="container">
-      <div className="full-logo">
-        <img src={fullLogo} alt="facebook" className="" />
-        <p className="hidden">
+    <section className="container mt-5 flex h-screen flex-col items-center bg-gray-100">
+      <div className="full-logo flex max-w-md flex-col items-center">
+        <img src={fullLogo} alt="facebook" className="w-72" />
+        <p className="text-center text-2xl">
           Connect with friends and the world around you on Facebook.
         </p>
       </div>
 
-      <div>
+      <div className="">
         <form>
           <div className="form-input">
             <input
@@ -39,7 +37,7 @@ function LoginPage() {
         </form>
 
         <Link to={"/forget-password"}>Forget Password?</Link>
-        <button type="button">Create new account</button>
+        <button className="btn">Create new account</button>
         <p>Create a Page for a celebrity, brand or business.</p>
       </div>
     </section>
