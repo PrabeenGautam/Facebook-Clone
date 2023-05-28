@@ -7,38 +7,62 @@ function LoginPage() {
   useTitle("Facebook - log in or sign up");
 
   return (
-    <section className="container mt-5 flex h-screen flex-col items-center bg-gray-100">
-      <div className="full-logo flex max-w-md flex-col items-center">
-        <img src={fullLogo} alt="facebook" className="w-72" />
-        <p className="text-center text-2xl">
-          Connect with friends and the world around you on Facebook.
-        </p>
-      </div>
+    <section className=" flex h-screen flex-col items-center  bg-gray-100">
+      <div className="m-12 max-w-sm lg:flex lg:max-w-[61.25rem] lg:justify-between lg:pt-24">
+        <div className="full-logo  flex flex-col items-center lg:mr-48 lg:mt-10 lg:items-start">
+          <img src={fullLogo} alt="facebook" className="w-72 lg:-ml-8" />
+          <p className="text-center text-2xl lg:text-left">
+            Connect with friends and the world around you on Facebook.
+          </p>
+        </div>
+        <div className="relative mt-10 rounded-lg bg-white px-3 py-5 shadow-lg lg:mt-0">
+          <form className="space-y-3 md:w-[22rem]">
+            <div className="form-input">
+              <input
+                className="focus:caret- w-full rounded-md border  border-gray-300 p-3 text-base placeholder-gray-600 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Email or phone number"
+              />
+            </div>
+            <div className="form-input">
+              <input
+                className="w-full rounded-md border border-gray-300  p-3 text-base placeholder-gray-700 focus:border-blue-500 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn bg-[#1877f2] px-4 py-2.5 text-xl font-bold text-white transition duration-500 ease-in-out hover:bg-blue-600"
+            >
+              Log In
+            </button>
+          </form>
 
-      <div className="">
-        <form>
-          <div className="form-input">
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Email of phone number"
-            />
+          <Link
+            to={"/forget-password"}
+            className="mt-4 block text-center text-sm text-[#1877f2]  hover:underline"
+          >
+            Forget password?
+          </Link>
+          <hr className="mt-4" />
+          <div className="my-4 flex justify-center">
+            <button className="btn  w-fit bg-[#42b72a] px-4 py-3 font-bold text-white transition duration-500 ease-in-out hover:bg-[#36a420]">
+              Create new account
+            </button>
           </div>
-          <div className="form-input">
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit">Log In</button>
-        </form>
 
-        <Link to={"/forget-password"}>Forget Password?</Link>
-        <button className="btn">Create new account</button>
-        <p>Create a Page for a celebrity, brand or business.</p>
+          <div className="absolute -bottom-10 left-0 w-full max-w-sm text-center text-sm lg:text-base">
+            <Link to="/pages/create" className="font-bold hover:underline">
+              Create a Page
+            </Link>{" "}
+            for a celebrity, brand or business.
+          </div>
+        </div>
       </div>
     </section>
   );
