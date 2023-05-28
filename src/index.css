@@ -7,6 +7,11 @@
 
 @tailwind utilities;
 
+@font-face {
+  font-family: SfProDisplayRegular;
+  src: url("./assets/fonts/Sf Pro Display.OTF");
+}
+
 :root {
   --primary: #1b74e4;
   --primary-box-shadow: 0 0 0 2px #e7f3ff;

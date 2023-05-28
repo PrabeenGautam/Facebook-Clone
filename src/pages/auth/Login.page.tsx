@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
 import fullLogo from "@/assets/svg/fb-logo-full.svg";
 import useTitle from "@/hooks/useTitle";
-import Modal from "../../components/modal/Modal";
+import SignUpModal from "./SignUp.page";
 
 function LoginPage() {
   useTitle("Facebook - log in or sign up");
 
   return (
     <>
-      <Modal>
-        <div>This is a modal.</div>
-      </Modal>
+      <SignUpModal />
       <section className="login flex h-screen flex-col items-center bg-gray-100">
         <div className="m-12 max-w-sm lg:flex lg:max-w-[61.25rem] lg:justify-between lg:pt-24">
           <div className="full-logo  flex flex-col items-center lg:mr-44 lg:mt-10 lg:items-start">

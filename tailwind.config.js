@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -17,6 +19,9 @@ export default {
       },
       animation: {
         "fade-up": "fadeup 500ms ease-in-out forwards",
+      },
+      fontFamily: {
+        facebook: ["SfProDisplayRegular", ...defaultTheme.fontFamily.sans],
       },
     },
   },
