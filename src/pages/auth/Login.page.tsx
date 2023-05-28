@@ -7,16 +7,16 @@ function LoginPage() {
   useTitle("Facebook - log in or sign up");
 
   return (
-    <section className=" flex h-screen flex-col items-center  bg-gray-100">
+    <section className="login flex h-screen flex-col items-center bg-gray-100">
       <div className="m-12 max-w-sm lg:flex lg:max-w-[61.25rem] lg:justify-between lg:pt-24">
-        <div className="full-logo  flex flex-col items-center lg:mr-48 lg:mt-10 lg:items-start">
-          <img src={fullLogo} alt="facebook" className="w-72 lg:-ml-8" />
+        <div className="full-logo  flex flex-col items-center lg:mr-44 lg:mt-10 lg:items-start">
+          <img src={fullLogo} alt="facebook" className="w-72 lg:-ml-7" />
           <p className="text-center text-2xl lg:text-left">
             Connect with friends and the world around you on Facebook.
           </p>
         </div>
-        <div className="relative mt-10 rounded-lg bg-white px-3 py-5 shadow-lg lg:mt-0">
-          <form className="space-y-3 md:w-[22rem]">
+        <div className="form relative mt-10 rounded-xl bg-white p-5 lg:mt-0">
+          <form className="space-y-3 md:w-[23rem]">
             <div className="form-input">
               <input
                 className="focus:caret- w-full rounded-md border  border-gray-300 p-3 text-base placeholder-gray-600 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
@@ -49,7 +49,7 @@ function LoginPage() {
           >
             Forget password?
           </Link>
-          <hr className="mt-4" />
+          <hr className="my-6 border border-gray-200" />
           <div className="my-4 flex justify-center">
             <button className="btn  w-fit bg-[#42b72a] px-4 py-3 font-bold text-white transition duration-500 ease-in-out hover:bg-[#36a420]">
               Create new account
@@ -57,10 +57,13 @@ function LoginPage() {
           </div>
 
           <div className="absolute -bottom-10 left-0 w-full max-w-sm text-center text-sm lg:text-base">
-            <Link to="/pages/create" className="font-bold hover:underline">
+            <Link
+              to="/pages/create"
+              className="text-sm font-bold hover:underline"
+            >
               Create a Page
-            </Link>{" "}
-            for a celebrity, brand or business.
+            </Link>
+            &nbsp; for a celebrity, brand or business.
           </div>
         </div>
       </div>
