@@ -9,17 +9,17 @@ interface Props extends HTMLAttributes<HTMLElement> {
 function Checkbox(props: Props) {
   return (
     <span
-      className={`relative flex h-8 items-center rounded-[4px] border border-gray-400 bg-white ${props.className}`}
+      className={` relative flex h-8 cursor-pointer items-center rounded-[4px] border border-gray-400 bg-white ${props.className} `}
     >
       <label
-        className="color-[#1c1e21] w-full pl-2.5 capitalize"
+        className="color-[#1c1e21] w-full cursor-pointer pl-2.5 capitalize"
         htmlFor={props.label}
       >
         {props.label}
       </label>
       <input
         type="radio"
-        className="absolute right-2.5 top-0 h-full"
+        className="absolute right-2.5 top-0 h-full cursor-pointer"
         name={props.name}
         value={props.value}
         id={props.label}
