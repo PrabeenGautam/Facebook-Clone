@@ -1,13 +1,7 @@
-import { HTMLAttributes } from "react";
+import { forwardRef } from "react";
+import { SelectProps } from "../../types/input/input.types";
 
-interface Props extends HTMLAttributes<HTMLElement> {
-  data?: number[] | string[];
-  object?: { label: string | number; value: string | number }[];
-  selected?: number | string;
-  name: string;
-}
-
-function Select(props: Props) {
+const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
   let dataArray = props.data;
 
   const hasObject = props.object?.every(
@@ -16,9 +10,11 @@ function Select(props: Props) {
 
   return (
     <select
+      ref={ref}
       name={props.name}
       id={props.id}
       title={props.title}
+      onChange={props.onChange}
       defaultValue={props.defaultValue}
       className={`flex h-8 w-full cursor-pointer items-center rounded-[4px] border border-gray-300 bg-white pl-1.5 ${props.className} `}
     >
@@ -38,6 +34,7 @@ function Select(props: Props) {
         props.object?.map((list, index) => {
           return (
             <option
+              disabled={index === 0 && props.firstOptionDisabled}
               key={`${props.id}-${index}`}
               value={props.id === "month" ? index + 1 : list.value}
             >
@@ -47,6 +44,6 @@ function Select(props: Props) {
         })}
     </select>
   );
-}
+});
 
 export default Select;

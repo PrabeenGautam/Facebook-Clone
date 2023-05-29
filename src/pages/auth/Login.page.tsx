@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import fullLogo from "@/assets/svg/fb-logo-full.svg";
 import useTitle from "@/hooks/useTitle";
 import SignUpModal from "./SignUp.page";
+import Input from "../../components/input/Input";
 
 function LoginPage() {
   useTitle("Facebook - log in or sign up");
@@ -19,24 +20,20 @@ function LoginPage() {
           </div>
           <div className="form relative mt-10 rounded-xl bg-white p-5 lg:mt-0">
             <form className="space-y-3 md:w-[23rem]">
-              <div className="form-input">
-                <input
-                  className="focus:caret- w-full rounded-md border  border-gray-300 p-3 text-base placeholder-gray-600 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
-                  type="text"
-                  name="username"
-                  id="username"
-                  placeholder="Email or phone number"
-                />
-              </div>
-              <div className="form-input">
-                <input
-                  className="w-full rounded-md border border-gray-300  p-3 text-base placeholder-gray-700 focus:border-blue-500 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                />
-              </div>
+              <Input
+                name="username"
+                id="username"
+                placeholder="Email or phone number"
+                inputClassName="p-3"
+              />
+
+              <Input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                inputClassName="p-3"
+              />
               <button
                 type="submit"
                 className="btn bg-[#1877f2] px-4 py-2.5 text-xl font-bold text-white transition duration-500 ease-in-out hover:bg-blue-600"

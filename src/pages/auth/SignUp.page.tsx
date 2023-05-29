@@ -1,19 +1,64 @@
 import { Link } from "react-router-dom";
+import { ChangeEvent, useRef, useState, FormEvent } from "react";
+
 import Checkbox from "../../components/input/Checkbox";
 import Modal from "../../components/modal/Modal";
 import Select from "../../components/input/Select";
 import { month, pronoun } from "../../assets/data/static.data";
 import generateValue from "../../utils/generateValue";
+import Input from "../../components/input/Input";
+import { SignUpForm } from "../../types/forms/forms.types";
 
 function SignUpModal() {
   const date = new Date();
-
   const currentMonth = date.getMonth() + 1;
   const currentDate = date.getDate();
   const currentYear = date.getFullYear();
 
+  const customRef = useRef<HTMLInputElement>(null);
+  const [formData, setFormData] = useState<SignUpForm>({
+    firstname: "",
+    lastname: "",
+    username: "",
+    password: "",
+    month: currentMonth,
+    date: currentDate,
+    year: currentYear,
+    gender: "",
+    pronoun: "",
+  });
+
+  const [showPronoun, setShowPronoun] = useState(false);
+
   const dateArray = generateValue(1, 31);
-  const yearArray = generateValue(1905, currentYear);
+  const yearArray = generateValue(1905, currentYear).reverse();
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    if (e.target.id === "custom") {
+      setShowPronoun(e.target.checked);
+    }
+
+    if (e.target.id === "female" || e.target.id === "male") {
+      setShowPronoun(false);
+      setFormData((prev) => ({ ...prev, pronoun: "" }));
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setFormData((prev) => ({ ...prev, [name]: Number.parseInt(value) }));
+  };
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    console.log(formData);
+  };
 
   return (
     <Modal
@@ -21,48 +66,43 @@ function SignUpModal() {
       subheading="It's quick and easy."
       contentClassName="w-full max-w-sm md:max-w-md"
     >
-      <form className="space-y-3">
+      <form className="space-y-3" onSubmit={handleSubmit}>
         <div className="fullname space-y-3 md:flex md:gap-4 md:space-y-0">
-          <div className="form-input md:w-1/2">
-            <input
-              className=" w-full rounded-md border  border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
-              type="text"
-              name="firstname"
-              id="firstname"
-              placeholder="First Name"
-            />
-          </div>
+          <Input
+            className="md:w-1/2"
+            name="firstname"
+            id="firstname"
+            placeholder="First Name"
+            inputClassName="px-3 py-2"
+            onChange={handleInputChange}
+          />
 
-          <div className="form-input md:w-1/2">
-            <input
-              className="t w-full rounded-md  border border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
-              type="text"
-              name="lastname"
-              id="lastname"
-              placeholder="Last Name"
-            />
-          </div>
-        </div>
-
-        <div className="form-input">
-          <input
-            className="t w-full rounded-md  border border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
-            type="text"
-            name="username"
-            id="sign-username"
-            placeholder="Email or phone number"
+          <Input
+            className="md:w-1/2"
+            name="lastname"
+            id="lastname"
+            placeholder="Last Name"
+            inputClassName="px-3 py-2"
+            onChange={handleInputChange}
           />
         </div>
 
-        <div className="form-input">
-          <input
-            className="t w-full rounded-md border border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-500 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
-            type="password"
-            name="password"
-            id="sign-password"
-            placeholder="New Password"
-          />
-        </div>
+        <Input
+          name="username"
+          id="sign-username"
+          placeholder="Email or phone number"
+          inputClassName="px-3 py-2"
+          onChange={handleInputChange}
+        />
+
+        <Input
+          type="password"
+          name="password"
+          id="sign-password"
+          placeholder="New Password"
+          inputClassName="px-3 py-2"
+          onChange={handleInputChange}
+        />
 
         <div className="form-input">
           <label className="text-sm/[20px] text-[#606770]">Birthday</label>
@@ -74,6 +114,7 @@ function SignUpModal() {
               className="flex-auto"
               defaultValue={currentMonth}
               data={month}
+              onChange={handleSelectChange}
             />
 
             <Select
@@ -83,6 +124,7 @@ function SignUpModal() {
               className="flex-auto"
               defaultValue={currentDate}
               data={dateArray}
+              onChange={handleSelectChange}
             />
 
             <Select
@@ -92,6 +134,7 @@ function SignUpModal() {
               className="flex-auto"
               defaultValue={currentYear}
               data={yearArray}
+              onChange={handleSelectChange}
             />
           </div>
         </div>
@@ -102,35 +145,44 @@ function SignUpModal() {
             <Checkbox
               className="flex-auto flex-shrink-0"
               label="female"
-              name="sex"
+              name="gender"
               value={1}
+              onChange={handleInputChange}
             />
             <Checkbox
               className="flex-auto flex-shrink-0"
               label="male"
-              name="sex"
+              name="gender"
               value={2}
+              onChange={handleInputChange}
             />
             <Checkbox
               className="flex-auto flex-shrink-0"
               label="custom"
-              name="sex"
+              name="gender"
+              onChange={handleInputChange}
+              ref={customRef}
               value={-1}
             />
           </div>
         </div>
 
-        <div className="form-input mt-4">
-          <Select
-            name="pronoun"
-            id="pronoun"
-            title="Select your pronoun"
-            object={pronoun}
-          />
-          <p className="mt-2 text-xs text-stone-500">
-            Your pronoun is visible to everyone.
-          </p>
-        </div>
+        {showPronoun && (
+          <div className="form-input mt-4">
+            <Select
+              name="pronoun"
+              id="pronoun"
+              title="Select your pronoun"
+              onChange={handleSelectChange}
+              firstOptionDisabled={true}
+              object={pronoun}
+              defaultValue={0}
+            />
+            <p className="mt-2 text-xs text-stone-500">
+              Your pronoun is visible to everyone.
+            </p>
+          </div>
+        )}
 
         <p className="text-xs text-stone-500">
           People who use our service may have uploaded your contact information
@@ -178,7 +230,7 @@ function SignUpModal() {
           . You may receive SMS Notifications from us and can opt out any time.
         </p>
 
-        <div className="my-6 flex justify-center">
+        <div className="!mt-6 flex justify-center">
           <button
             type="submit"
             className="btn w-fit bg-[#00a400] px-12 py-2 text-lg font-bold text-white transition duration-500 ease-in-out hover:bg-[#36a420]"
