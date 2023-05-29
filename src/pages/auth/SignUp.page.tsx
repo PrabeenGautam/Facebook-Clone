@@ -9,7 +9,11 @@ import generateValue from "../../utils/generateValue";
 import Input from "../../components/input/Input";
 import { SignUpForm } from "../../types/forms/forms.types";
 
-function SignUpModal() {
+type SignUpProps = {
+  onClose: () => void;
+};
+
+function SignUpModal({ onClose }: SignUpProps) {
   const date = new Date();
   const currentMonth = date.getMonth() + 1;
   const currentDate = date.getDate();
@@ -65,6 +69,7 @@ function SignUpModal() {
       heading="Sign Up"
       subheading="It's quick and easy."
       contentClassName="w-full max-w-sm md:max-w-md"
+      onClose={onClose}
     >
       <form className="space-y-3" onSubmit={handleSubmit}>
         <div className="fullname space-y-3 md:flex md:gap-4 md:space-y-0">

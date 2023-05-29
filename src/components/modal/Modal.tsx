@@ -3,7 +3,7 @@ import { GrFormClose } from "react-icons/gr";
 
 import { ModalProps } from "../../types/modal/modal.types";
 
-function ModalContent(props: ModalProps) {
+function ModalContent({ onClose, ...props }: ModalProps) {
   return (
     <div className="modal fixed inset-0 z-50 flex w-full items-center justify-center bg-[rgba(255,255,255,0.2)] backdrop-blur-sm">
       <div
@@ -23,7 +23,7 @@ function ModalContent(props: ModalProps) {
           </div>
 
           {props.showClose && (
-            <span className="close cursor-pointer">
+            <span className="close cursor-pointer" onClick={onClose}>
               <GrFormClose className="h-8 w-8" />
             </span>
           )}
@@ -42,6 +42,7 @@ function Modal({
   heading,
   subheading = "",
   showClose = true,
+  onClose,
 }: ModalProps) {
   const modalContainer = document.querySelector("#modal") as HTMLElement;
 
@@ -52,6 +53,7 @@ function Modal({
       heading={heading}
       subheading={subheading}
       showClose={showClose}
+      onClose={onClose}
     />,
     modalContainer
   );

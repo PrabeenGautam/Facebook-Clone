@@ -6,4 +6,6 @@ export interface ModalProps {
   heading: string;
   subheading?: string;
   showClose?: boolean;
+
+  onClose: () => void;
 }

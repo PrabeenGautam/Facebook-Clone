@@ -3,13 +3,23 @@ import fullLogo from "@/assets/svg/fb-logo-full.svg";
 import useTitle from "@/hooks/useTitle";
 import SignUpModal from "./SignUp.page";
 import Input from "../../components/input/Input";
+import { useState } from "react";
 
 function LoginPage() {
   useTitle("Facebook - log in or sign up");
+  const [signUpModal, setSignUpModal] = useState(true);
+
+  function openSignUpModel() {
+    setSignUpModal(true);
+  }
+
+  function closeSignUpModel() {
+    setSignUpModal(false);
+  }
 
   return (
     <>
-      <SignUpModal />
+      {signUpModal && <SignUpModal onClose={closeSignUpModel} />}
       <section className="login flex h-screen flex-col items-center bg-gray-100">
         <div className="m-12 max-w-sm lg:flex lg:max-w-[61.25rem] lg:justify-between lg:pt-24">
           <div className="full-logo  flex flex-col items-center lg:mr-44 lg:mt-10 lg:items-start">
@@ -50,7 +60,10 @@ function LoginPage() {
             </Link>
             <hr className="my-6 border border-gray-200" />
             <div className="my-4 flex justify-center">
-              <button className="btn w-fit bg-[#42b72a] px-4 py-3 font-bold text-white transition duration-500 ease-in-out hover:bg-[#36a420]">
+              <button
+                className="btn w-fit bg-[#42b72a] px-4 py-3 font-bold text-white transition duration-500 ease-in-out hover:bg-[#36a420]"
+                onClick={openSignUpModel}
+              >
                 Create new account
               </button>
             </div>
