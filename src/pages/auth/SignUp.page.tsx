@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Checkbox from "../../components/input/Checkbox";
 import Modal from "../../components/modal/Modal";
 import Select from "../../components/input/Select";
-import { month } from "../../assets/data/year.data";
+import { month, pronoun } from "../../assets/data/static.data";
 import generateValue from "../../utils/generateValue";
 
 function SignUpModal() {
@@ -25,7 +25,7 @@ function SignUpModal() {
         <div className="fullname space-y-3 md:flex md:gap-4 md:space-y-0">
           <div className="form-input md:w-1/2">
             <input
-              className=" w-full rounded-md border  border-gray-400 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
+              className=" w-full rounded-md border  border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
               type="text"
               name="firstname"
               id="firstname"
@@ -35,7 +35,7 @@ function SignUpModal() {
 
           <div className="form-input md:w-1/2">
             <input
-              className="t w-full rounded-md  border border-gray-400 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
+              className="t w-full rounded-md  border border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
               type="text"
               name="lastname"
               id="lastname"
@@ -46,7 +46,7 @@ function SignUpModal() {
 
         <div className="form-input">
           <input
-            className="t w-full rounded-md  border border-gray-400 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
+            className="t w-full rounded-md  border border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-700 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
             type="text"
             name="username"
             id="sign-username"
@@ -56,7 +56,7 @@ function SignUpModal() {
 
         <div className="form-input">
           <input
-            className="t w-full rounded-md border border-gray-400 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-500 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
+            className="t w-full rounded-md border border-gray-300 bg-gray-100 px-3 py-2 text-base placeholder-gray-500 focus:border-blue-500 focus:placeholder-gray-400 focus:caret-blue-700 focus:shadow-sm focus:outline-none"
             type="password"
             name="password"
             id="sign-password"
@@ -118,6 +118,18 @@ function SignUpModal() {
               value={-1}
             />
           </div>
+        </div>
+
+        <div className="form-input mt-4">
+          <Select
+            name="pronoun"
+            id="pronoun"
+            title="Select your pronoun"
+            object={pronoun}
+          />
+          <p className="mt-2 text-xs text-stone-500">
+            Your pronoun is visible to everyone.
+          </p>
         </div>
 
         <p className="text-xs text-stone-500">
