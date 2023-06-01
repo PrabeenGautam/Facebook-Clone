@@ -3,6 +3,7 @@ import { HTMLAttributes, Ref, InputHTMLAttributes } from "react";
 export interface OptionData {
   label: string | number;
   value: string | number;
+  hidden?: boolean;
 }
 
 export interface SelectProps extends HTMLAttributes<HTMLSelectElement> {

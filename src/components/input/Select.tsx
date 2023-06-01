@@ -34,6 +34,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
         props.object?.map((list, index) => {
           return (
             <option
+              hidden={list.hidden || false}
               disabled={index === 0 && props.firstOptionDisabled}
               key={`${props.id}-${index}`}
               value={props.id === "month" ? index + 1 : list.value}

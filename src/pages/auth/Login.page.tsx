@@ -8,7 +8,7 @@ import Input from "../../components/input/Input";
 
 function LoginPage() {
   useTitle("Facebook - log in or sign up");
-  const [signUpModal, setSignUpModal] = useState(true);
+  const [signUpModal, setSignUpModal] = useState(false);
 
   function openSignUpModel() {
     setSignUpModal(true);
