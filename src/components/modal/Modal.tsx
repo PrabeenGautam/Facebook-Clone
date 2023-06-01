@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { GrFormClose } from "react-icons/gr";
 
 import { ModalProps } from "../../types/modal/modal.types";
 
 function ModalContent({ onClose, ...props }: ModalProps) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
   return (
     <div className="modal fixed inset-0 z-50 flex w-full items-center justify-center bg-[rgba(255,255,255,0.2)] backdrop-blur-sm">
       <div
