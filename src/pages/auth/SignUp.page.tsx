@@ -151,6 +151,7 @@ function SignUpModal({ onClose }: SignUpProps) {
               className="flex-auto flex-shrink-0"
               label="female"
               name="gender"
+              id="female"
               value={1}
               onChange={handleInputChange}
             />
@@ -158,6 +159,7 @@ function SignUpModal({ onClose }: SignUpProps) {
               className="flex-auto flex-shrink-0"
               label="male"
               name="gender"
+              id="male"
               value={2}
               onChange={handleInputChange}
             />
@@ -165,6 +167,7 @@ function SignUpModal({ onClose }: SignUpProps) {
               className="flex-auto flex-shrink-0"
               label="custom"
               name="gender"
+              id="custom"
               onChange={handleInputChange}
               ref={customRef}
               value={-1}
