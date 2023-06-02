@@ -5,18 +5,29 @@ import Messenger from "../icons/Messenger";
 
 import demo from "@/assets/profile/small.jpg";
 import Searcher from "../search/Searcher";
+import Menu from "./../icons/Menu";
 
 function Navbar() {
   return (
-    <div className="relative flex h-14 items-center space-x-4 bg-[--nav-bg] px-4 md:justify-between">
+    <div className="relative flex h-14 items-center bg-[--nav-bg] px-4 md:justify-between">
+      {/* top Section  */}
       <Searcher />
-      <div className="middle center !ml-[5.5rem] h-12 w-12 rounded-md text-[--secondary-text] active:bg-[--comment]">
-        <Hamburger width={24} className="cursor-pointer select-none" />
+
+      {/* // Middle Section  */}
+      <div className=" middle center mx-[5.5rem]  flex h-full w-full rounded-md text-[--secondary-text] active:bg-[--comment] md:mx-[6.5rem] lg:justify-center">
+        <div className="flex">
+          <Hamburger width={24} className="cursor-pointer select-none" />
+        </div>
       </div>
 
-      <div className="right !ml-auto flex justify-end space-x-2 text-[--primary-text]">
-        <div className="icons text-[--primary-text]">
+      {/* // Right Section  */}
+      <div className="right absolute right-0 top-0 !ml-auto flex justify-end space-x-2 py-2 text-[--primary-text]">
+        <div className="icons text-[--primary-text] xl:hidden">
           <Add width={20} />
+        </div>
+
+        <div className="icons hidden text-[--primary-text] xl:flex">
+          <Menu width={20} />
         </div>
         <div className="icons text-[--primary-text]">
           <Messenger width={20} />

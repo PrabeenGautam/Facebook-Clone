@@ -6,7 +6,7 @@
 }
 
 .icons {
-  @apply center h-10 w-10 cursor-pointer rounded-full bg-[--comment];
+  @apply center h-10 w-10 cursor-pointer rounded-full bg-[--comment] hover:bg-[#4e4f50];
 }
 
 @tailwind utilities;
@@ -20,22 +20,6 @@
   --body: #18191a;
   --nav-bg: #242526;
   --comment: #3a3b3c;
-  --nav-bg-gradient: linear-gradient(
-    to top,
-    #242526,
-    rgba(36, 37, 38, 0.9),
-    rgba(36, 37, 38, 0.7),
-    rgba(36, 37, 38, 0.4),
-    rgba(36, 37, 38, 0)
-  );
-  --nav-bg-gradient-wash: linear-gradient(
-    to top,
-    #18191a,
-    rgba(24, 25, 26, 0.9),
-    rgba(24, 25, 26, 0.7),
-    rgba(24, 25, 26, 0.4),
-    rgba(24, 25, 26, 0)
-  );
   --fb-logo-color: #2d88ff;
   --primary-btn-bg: #2374e1;
   --primary-btn-text: #ffffff;
@@ -46,6 +30,7 @@
   --placeholder-image: rgb(164, 167, 171);
   --placeholder-text: #8a8d91;
   --placeholder-text-on-media: rgba(255, 255, 255, 0.5);
+
   --secondary-btn-bg: rgba(255, 255, 255, 0.1);
   --secondary-btn-bg-float: #4b4c4f;
   --secondary-btn-bg-on-dark: rgba(255, 255, 255, 0.4);
