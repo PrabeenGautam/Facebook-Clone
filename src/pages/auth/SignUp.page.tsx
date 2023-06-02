@@ -2,10 +2,10 @@ import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { month, pronoun } from "@/assets/data/static.data";
-import Checkbox from "@/components/input/Checkbox";
-import Input from "@/components/input/Input";
-import Select from "@/components/input/Select";
 import Modal from "@/components/modal/Modal";
+import Checkbox from "@/src/components/inputs/Checkbox";
+import Input from "@/src/components/inputs/Input";
+import Select from "@/src/components/inputs/Select";
 import { SignUpForm } from "@/src/types/forms/forms.types";
 import generateValue from "@/utils/generateValue";
 
