@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { month, pronoun } from "../../assets/data/static.data";
-import Checkbox from "../../components/input/Checkbox";
-import Input from "../../components/input/Input";
-import Select from "../../components/input/Select";
-import Modal from "../../components/modal/Modal";
-import { SignUpForm } from "../../types/forms/forms.types";
-import generateValue from "../../utils/generateValue";
+import { month, pronoun } from "@/assets/data/static.data";
+import Checkbox from "@/components/input/Checkbox";
+import Input from "@/components/input/Input";
+import Select from "@/components/input/Select";
+import Modal from "@/components/modal/Modal";
+import { SignUpForm } from "@/src/types/forms/forms.types";
+import generateValue from "@/utils/generateValue";
 
 type SignUpProps = {
   onClose: () => void;

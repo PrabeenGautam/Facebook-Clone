@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import fullLogo from "@/assets/svg/fb-logo-full.svg";
+import Input from "@/components/input/Input";
 import useTitle from "@/hooks/useTitle";
 import SignUpModal from "./SignUp.page";
-import Input from "../../components/input/Input";
 
 function LoginPage() {
   useTitle("Facebook - log in or sign up");
