@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import fullLogo from "@/assets/svg/fb-logo-full.svg";
+import Input from "@/components/inputs/Input";
 import useTitle from "@/hooks/useTitle";
-import Input from "@/src/components/inputs/Input";
 import SignUpModal from "./SignUp.page";
 
 function LoginPage() {

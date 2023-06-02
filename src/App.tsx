@@ -1,10 +1,15 @@
-import { Route } from "react-router-dom";
-import LoginPage from "./pages/auth/Login.page";
+import { Route, Routes } from "react-router-dom";
+
+import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/home/Home.pages";
 
 function App() {
   return (
     <>
-      <Route path="/login" element={<LoginPage />} />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
     </>
   );
 }
