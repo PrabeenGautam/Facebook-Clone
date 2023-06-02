@@ -16,9 +16,21 @@ export default {
             transform: "translateY(0)",
           },
         },
+        fadeLeft: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(1rem)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
       },
+
       animation: {
         "fade-up": "fadeup 500ms ease-in-out forwards",
+        "fade-left": "fadeLeft 300ms ease-in-out forwards",
       },
       fontFamily: {
         facebook: ["SfProDisplayRegular", ...defaultTheme.fontFamily.sans],
