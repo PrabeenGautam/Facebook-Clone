@@ -1,4 +1,4 @@
-import { HTMLAttributes, Ref, InputHTMLAttributes } from "react";
+import { HTMLAttributes, InputHTMLAttributes, Ref } from "react";
 
 export interface OptionData {
   label: string | number;
