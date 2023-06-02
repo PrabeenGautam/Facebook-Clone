@@ -5,6 +5,10 @@
   @apply w-full rounded-md border-none outline-none;
 }
 
+.icons {
+  @apply center h-10 w-10 cursor-pointer rounded-full bg-[--comment];
+}
+
 @tailwind utilities;
 
 @font-face {
@@ -12,11 +16,67 @@
   src: url("./assets/fonts/Sf Pro Display.OTF");
 }
 
+:root {
+  --body: #18191a;
+  --nav-bg: #242526;
+  --comment: #3a3b3c;
+  --nav-bg-gradient: linear-gradient(
+    to top,
+    #242526,
+    rgba(36, 37, 38, 0.9),
+    rgba(36, 37, 38, 0.7),
+    rgba(36, 37, 38, 0.4),
+    rgba(36, 37, 38, 0)
+  );
+  --nav-bg-gradient-wash: linear-gradient(
+    to top,
+    #18191a,
+    rgba(24, 25, 26, 0.9),
+    rgba(24, 25, 26, 0.7),
+    rgba(24, 25, 26, 0.4),
+    rgba(24, 25, 26, 0)
+  );
+  --fb-logo-color: #2d88ff;
+  --primary-btn-bg: #2374e1;
+  --primary-btn-text: #ffffff;
+  --primary-btn-pressed: #77a7ff;
+  --primary-text: #e4e6eb;
+  --primary-text-on-media: white;
+  --secondary-btn-bg: rgba(255, 255, 255, 0.1);
+  --secondary-btn-bg-float: #4b4c4f;
+  --secondary-btn-bg-on-dark: rgba(255, 255, 255, 0.4);
+  --secondary-btn-pressed: rgba(0, 0, 0, 0.05);
+  --secondary-btn-stroke: transparent;
+  --secondary-btn-text: #e4e6eb;
+  --secondary-text: #b0b3b8;
+  --secondary-text-on-media: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  background-color: var(--body);
+}
+
+a {
+  color: #385898;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 input,
 select,
 textarea {
   background-color: #fff;
   color: #1c1e21;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transition-input {
+  transition: width 2s linear;
 }
 
 .login .form,
