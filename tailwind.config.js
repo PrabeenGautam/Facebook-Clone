@@ -48,6 +48,14 @@ export default {
       colors: {
         "blue-link": "var(--blue-link)",
       },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        xll: "1380px",
+        "2xl": "1536px",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],

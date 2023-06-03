@@ -10,3 +10,7 @@ export interface SidebarShortcut {
   label: string;
   image: string;
 }
+
+export interface SidebarHandlerProps {
+  show: boolean;
+}

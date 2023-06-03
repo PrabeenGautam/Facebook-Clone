@@ -1,4 +1,4 @@
-import { SidebarShortcut } from "@/types/data/sidebar.types";
+import { SidebarShortcut } from "@/types/sidebar/sidebar.types";
 
 const sidebarShortcut: SidebarShortcut[] = [
   {

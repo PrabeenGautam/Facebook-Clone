@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { SidebarShortcut } from "@/types/data/sidebar.types";
+import { SidebarShortcut } from "@/types/sidebar/sidebar.types";
 import UpArrow from "@/components/icons/arrow/UpArrow";
 import DownArrow from "@/components/icons/arrow/DownArrow";
 import sidebarShortcut from "@/assets/data/sidebarShortcut.data";

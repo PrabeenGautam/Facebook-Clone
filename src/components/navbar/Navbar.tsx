@@ -12,7 +12,11 @@ import Watch from "../icons/Watch";
 import Searcher from "../search/Searcher";
 import Menu from "./../icons/Menu";
 
-function Navbar() {
+interface Navbar {
+  handleSidebar: () => void;
+}
+
+function Navbar({ handleSidebar }: Navbar) {
   return (
     <div className="sticky top-0 z-50 flex  h-[--h-header] items-center bg-[--nav-bg] px-4 md:justify-between">
       {/* top Section  */}
@@ -32,7 +36,10 @@ function Navbar() {
         <div className="hidden h-full flex-grow active:bg-[--comment]  md:flex md:max-w-[3.5rem] md:items-center  md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px] ">
           <Groups width={28} className="cursor-pointer select-none" />
         </div>
-        <div className="flex h-12 w-12 items-center justify-center active:bg-[--comment] md:h-full md:max-w-[3.5rem] md:flex-grow  lg:max-w-[5rem] xl:hidden ">
+        <div
+          className="flex h-12 w-12 items-center justify-center active:bg-[--comment] md:h-full md:max-w-[3.5rem] md:flex-grow  lg:max-w-[5rem] xl:hidden"
+          onClick={handleSidebar}
+        >
           <Hamburger width={28} className="cursor-pointer select-none" />
         </div>
         <div className="hidden h-full flex-grow active:bg-[--comment]  md:max-w-[3.5rem] md:items-center md:justify-center  lg:max-w-[5rem]  xl:flex xl:max-w-[111.6px] ">
