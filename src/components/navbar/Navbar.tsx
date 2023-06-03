@@ -14,7 +14,7 @@ import Menu from "./../icons/Menu";
 
 function Navbar() {
   return (
-    <div className="relative flex h-14 items-center bg-[--nav-bg] px-4 md:justify-between">
+    <div className="sticky top-0 z-50 flex  h-[--h-header] items-center bg-[--nav-bg] px-4 md:justify-between">
       {/* top Section  */}
       <Searcher />
 

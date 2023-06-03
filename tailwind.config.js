@@ -27,7 +27,6 @@ export default {
           },
         },
       },
-
       animation: {
         "fade-up": "fadeup 500ms ease-in-out forwards",
         "fade-left": "fadeLeft 300ms ease-in-out forwards",
@@ -35,7 +34,15 @@ export default {
       fontFamily: {
         facebook: ["SfProDisplayRegular", ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        "sidebar-home": "url('./assets/image/sidemenu.png')",
+        "sidebar-social": "url('./assets/image/social.png')",
+      },
+      backgroundSize: {
+        social: "38px 112px",
+        sidebar: "38px 570px",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };

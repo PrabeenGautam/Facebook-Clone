@@ -4,7 +4,7 @@ import HomeRightSidebar from "@/components/sidebar/HomeRightSidebar";
 function Home() {
   return (
     <div className="content-container flex">
-      <div className="min-w-[17.5rem] max-w-[22.5rem] flex-auto">
+      <div className="child-scroll sticky top-0 h-[calc(100vh-var(--h-header))] min-w-[17.5rem] max-w-[22.5rem] flex-auto pt-4">
         <HomeLeftSidebar />
       </div>
       <div className="main-content flex flex-auto justify-center ">

@@ -6,11 +6,23 @@
 }
 
 .icons {
-  @apply center h-10 w-10 cursor-pointer rounded-full bg-[--comment] hover:bg-[#4e4f50];
+  @apply center aspect-square w-10 cursor-pointer rounded-full bg-[--comment] hover:bg-[#4e4f50];
 }
 
 .nav-active {
   @apply border-b-4 border-[--primary-btn-bg];
+}
+
+.sidebar-img {
+  @apply inline-block h-9 w-9 bg-no-repeat;
+}
+
+.sidebar-label {
+  @apply break-words text-[15px] font-medium leading-5 antialiased;
+}
+
+.child-scroll {
+  @apply overflow-hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#7b7b7b] scrollbar-thumb-rounded-full hover:overflow-y-auto;
 }
 
 .nav-active svg {
@@ -28,6 +40,9 @@
   --body: #18191a;
   --nav-bg: #242526;
   --comment: #3a3b3c;
+  --comment-hover: #303031;
+  --icon-hover: #404546;
+  --h-header: 3.5rem;
   --fb-logo-color: #2d88ff;
   --primary-btn-bg: #2374e1;
   --primary-btn-text: #ffffff;
@@ -51,15 +66,14 @@
 
 body {
   background-color: var(--body);
+  scroll-behavior: smooth;
 }
 
 body .content-container {
   color: var(--primary-text);
-  margin-top: 1.5rem;
 }
 
 a {
-  color: #385898;
   cursor: pointer;
   text-decoration: none;
 }
@@ -90,4 +104,8 @@ textarea {
 .search-shadow {
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2),
     inset 0 0 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-more:hover .icons {
+  background-color: var(--icon-hover);
 }
