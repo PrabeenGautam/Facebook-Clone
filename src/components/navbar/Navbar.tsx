@@ -14,14 +14,14 @@ function Navbar() {
       <Searcher />
 
       {/* // Middle Section  */}
-      <div className=" middle center mx-[5.5rem]  flex h-full w-full rounded-md text-[--secondary-text] active:bg-[--comment] md:mx-[6.5rem] lg:justify-center">
-        <div className="flex">
+      <div className=" middle center mx-[5.5rem] flex  h-full w-full text-[--secondary-text] md:mx-[6.5rem] lg:justify-center">
+        <div className="center h-10 w-10 rounded-md  active:bg-[--comment] ">
           <Hamburger width={24} className="cursor-pointer select-none" />
         </div>
       </div>
 
       {/* // Right Section  */}
-      <div className="right absolute right-0 top-0 !ml-auto flex justify-end space-x-2 py-2 text-[--primary-text]">
+      <div className="right absolute right-0 top-0 !ml-auto flex justify-end space-x-2 px-4 py-2 text-[--primary-text]">
         <div className="icons text-[--primary-text] xl:hidden">
           <Add width={20} />
         </div>

@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Facebook from "../icons/Facebook";
 import LeftArrowFull from "../icons/LeftArrowFull";
 import Search from "../icons/Search";
 
 function Searcher() {
   const [isInputFocused, setInputFocused] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  const handleOutsideClick = (event: MouseEvent) => {
+    if (
+      searchRef.current &&
+      !searchRef.current.contains(event.target as Node)
+    ) {
+      setInputFocused(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      window.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
 
   const handleInputFocus = () => {
     setInputFocused(true);
@@ -13,8 +31,10 @@ function Searcher() {
   const handleInputBlur = () => {
     setInputFocused(false);
   };
+
   return (
     <div
+      ref={searchRef}
       className={`left absolute left-0 top-0 rounded-lg bg-[--nav-bg] py-2 ${
         isInputFocused && "search-shadow"
       }`}
@@ -57,13 +77,12 @@ function Searcher() {
             id="search"
             placeholder="Search Facebook"
             onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
           />
         </label>
       </div>
 
       {isInputFocused && (
-        <div className="center mt-1 h-9 ">
+        <div className="center my-3 h-9 ">
           <span className="inline-block text-center text-[--placeholder-text]">
             No recent searches
           </span>
