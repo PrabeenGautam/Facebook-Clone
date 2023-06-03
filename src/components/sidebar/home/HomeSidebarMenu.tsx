@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import demo from "@/assets/profile/small.jpg";
 import homeSidebar from "@/assets/data/homeSidebar.data";
-import { HomeSidebarProps } from "@/types/data/homesidebar.types";
+import { HomeSidebarProps } from "@/types/data/sidebar.types";
 import UpArrow from "@/components/icons/arrow/UpArrow";
 import DownArrow from "@/components/icons/arrow/DownArrow";
 

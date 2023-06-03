@@ -1,4 +1,4 @@
-import { HomeSidebarProps } from "@/types/data/homesidebar.types";
+import { HomeSidebarProps } from "@/types/data/sidebar.types";
 const homeSidebar: HomeSidebarProps[] = [
   {
     label: "Friends",
