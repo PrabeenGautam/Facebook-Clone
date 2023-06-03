@@ -1,5 +1,5 @@
-import HomeLeftSidebar from "@/components/sidebar/HomeLeftSidebar";
-import HomeRightSidebar from "@/components/sidebar/HomeRightSidebar";
+import HomeLeftSidebar from "@/components/sidebar/home/HomeLeftSidebar";
+import HomeRightSidebar from "@/components/sidebar/home/HomeRightSidebar";
 
 function Home() {
   return (

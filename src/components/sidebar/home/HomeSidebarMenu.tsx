@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import demo from "@/assets/profile/small.jpg";
 import homeSidebar from "@/assets/data/homeSidebar.data";
 import { HomeSidebarProps } from "@/types/data/homesidebar.types";
-import DownArrow from "../icons/arrow/DownArrow";
-import UpArrow from "../icons/arrow/UpArrow";
+import UpArrow from "@/components/icons/arrow/UpArrow";
+import DownArrow from "@/components/icons/arrow/DownArrow";
 
 function HomeSidebarMenu() {
   const [data, setData] = useState([] as HomeSidebarProps[]);
