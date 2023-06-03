@@ -42,6 +42,12 @@ export default {
         social: "38px 112px",
         sidebar: "38px 570px",
       },
+      fontSize: {
+        smm: "15px",
+      },
+      colors: {
+        "blue-link": "var(--blue-link)",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],

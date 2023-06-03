@@ -43,7 +43,9 @@
   --comment-hover: #303031;
   --icon-hover: #404546;
   --h-header: 3.5rem;
-  --fb-logo-color: #2d88ff;
+  --divider: #3e4042;
+  --blue-link: #4599ff;
+
   --primary-btn-bg: #2374e1;
   --primary-btn-text: #ffffff;
   --primary-btn-pressed: #77a7ff;
@@ -71,6 +73,10 @@ body {
 
 body .content-container {
   color: var(--primary-text);
+}
+
+.child-scroll {
+  scrollbar-gutter: stable;
 }
 
 a {
