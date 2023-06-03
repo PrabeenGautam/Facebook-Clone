@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import demo from "@/assets/profile/small.jpg";
 import homeSidebar from "@/assets/data/homeSidebar.data";
 import { HomeSidebarProps } from "@/types/data/homesidebar.types";
-import DownArrow from "../icons/DownArrow";
-import UpArrow from "../icons/UpArrow";
+import DownArrow from "../icons/arrow/DownArrow";
+import UpArrow from "../icons/arrow/UpArrow";
 
 function HomeLeftSidebar() {
   const [data, setData] = useState([] as HomeSidebarProps[]);
@@ -53,7 +53,7 @@ function HomeLeftSidebar() {
           );
         })}
 
-        <li>
+        <li onClick={() => setFetch((prev) => !prev)}>
           <div className="sidebar-more ml-2 flex cursor-pointer items-center space-x-3 rounded-lg px-3 py-2 hover:bg-[--comment-hover]">
             <div className="icons w-9 text-[--primary-text]">
               {fetch ? <UpArrow width={20} /> : <DownArrow width={20} />}

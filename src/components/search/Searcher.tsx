@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Facebook from "../icons/Facebook";
-import LeftArrowFull from "../icons/LeftArrowFull";
+import LeftArrowFull from "../icons/arrow/LeftArrowFull";
 import Search from "../icons/Search";
 
 function Searcher() {
