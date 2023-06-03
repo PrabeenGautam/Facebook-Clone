@@ -40,9 +40,7 @@ function Searcher() {
       }`}
     >
       <div
-        className={`flex space-x-2 px-4 md:space-x-4 ${
-          isInputFocused && "md:space-x-2"
-        }`}
+        className={`flex space-x-2 px-4 ${isInputFocused && "md:space-x-2"}`}
       >
         {!isInputFocused ? (
           <Facebook />
@@ -60,7 +58,7 @@ function Searcher() {
         <label
           onClick={handleInputFocus}
           htmlFor="search"
-          className={`lg: flex w-10 overflow-hidden rounded-full bg-[--comment] text-[--secondary-text] lg:w-60 ${
+          className={`flex w-10 overflow-hidden rounded-full bg-[--comment] text-[--secondary-text] lg:w-60 ${
             isInputFocused && "w-60"
           }`}
         >
@@ -69,10 +67,12 @@ function Searcher() {
               isInputFocused ? "pl-2" : "pl-3"
             }`}
           >
-            <Search width={16} className={isInputFocused ? "-mr-5" : "-mr-0"} />
+            <Search width={16} className={isInputFocused ? "hidden" : ""} />
           </span>
           <input
-            className="hidden w-full rounded-full border-none bg-[--comment] px-2 text-[--primary-text] outline-none  placeholder:text-[--secondary-text] focus:placeholder:text-[#838489] lg:block"
+            className={` ${
+              !isInputFocused && "hidden"
+            } w-full rounded-full border-none bg-[--comment] px-2 text-[15px] text-[--primary-text]  outline-none placeholder:text-[--secondary-text] focus:placeholder:text-[#838489] lg:block`}
             type="text"
             id="search"
             placeholder="Search Facebook"

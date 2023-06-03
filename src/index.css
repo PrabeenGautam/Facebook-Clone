@@ -9,6 +9,14 @@
   @apply center h-10 w-10 cursor-pointer rounded-full bg-[--comment] hover:bg-[#4e4f50];
 }
 
+.nav-active {
+  @apply border-b-4 border-[--primary-btn-bg];
+}
+
+.nav-active svg {
+  fill: var(--primary-btn-bg);
+}
+
 @tailwind utilities;
 
 @font-face {
