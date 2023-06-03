@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home.pages";
@@ -10,18 +10,6 @@ function App() {
   const handleShowSidebar = () => {
     setShowSidebar((prev) => !prev);
   };
-
-  const handleResizeNavbar = () => {
-    if (window.innerWidth < 1280) {
-      setShowSidebar(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResizeNavbar);
-    handleResizeNavbar();
-    return () => window.removeEventListener("resize", handleResizeNavbar);
-  }, []);
 
   return (
     <>

@@ -35,7 +35,7 @@ function Searcher() {
   return (
     <div
       ref={searchRef}
-      className={`left absolute left-0 top-0 rounded-lg bg-[--nav-bg] py-2 ${
+      className={`left absolute left-0 top-0 rounded-lg bg-[--nav-bg] py-3 ${
         isInputFocused && "search-shadow"
       }`}
     >

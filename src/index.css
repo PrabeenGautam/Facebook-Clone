@@ -22,7 +22,7 @@
 }
 
 .child-scroll {
-  @apply overflow-hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#7b7b7b] scrollbar-thumb-rounded-full hover:overflow-y-auto;
+  @apply overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#7b7b7b] scrollbar-thumb-rounded-full;
 }
 
 .nav-active svg {
@@ -42,7 +42,7 @@
   --comment: #3a3b3c;
   --comment-hover: #303031;
   --icon-hover: #404546;
-  --h-header: 3.5rem;
+  --h-header: 4rem;
   --divider: #3e4042;
   --blue-link: #4599ff;
 
@@ -69,6 +69,7 @@
 body {
   background-color: var(--body);
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body .content-container {

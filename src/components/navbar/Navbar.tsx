@@ -48,7 +48,7 @@ function Navbar({ handleSidebar }: Navbar) {
       </div>
 
       {/* // Right Section  */}
-      <div className="right flex justify-end space-x-2 px-4 py-2 text-[--primary-text] md:absolute md:right-0 md:top-0">
+      <div className="right flex justify-end space-x-2 px-4 py-3 text-[--primary-text] md:absolute md:right-0 md:top-0">
         <div className="icons text-[--primary-text] xl:hidden">
           <Add width={20} />
         </div>
