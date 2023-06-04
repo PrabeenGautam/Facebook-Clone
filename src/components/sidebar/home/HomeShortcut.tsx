@@ -15,7 +15,7 @@ function HomeShortcut() {
   }, [fetch]);
   return (
     <div>
-      <div className="heading group mx-4 my-4 flex justify-between">
+      <div className="heading group mx-4 mt-4 flex justify-between">
         <p className="title text-[17px] font-semibold text-[--secondary-text]">
           Your shortcuts
         </p>

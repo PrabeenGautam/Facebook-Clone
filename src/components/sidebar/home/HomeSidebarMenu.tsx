@@ -11,7 +11,7 @@ function HomeSidebarMenu() {
   const [fetch, setFetch] = useState(false);
 
   useEffect(() => {
-    const data = fetch ? homeSidebar : homeSidebar.slice(0, 6);
+    const data = fetch ? homeSidebar : homeSidebar.slice(0, 5);
     setData(data);
   }, [fetch]);
   return (

@@ -10,7 +10,7 @@
 }
 
 .nav-active {
-  @apply border-b-4 border-[--primary-btn-bg];
+  @apply border-b-4 border-[--primary-btn-bg] text-[--primary-btn-bg];
 }
 
 .sidebar-img {
@@ -47,6 +47,22 @@
   .toggle-scrollbar:hover {
     overflow: auto;
   }
+
+  .el-active {
+    color: var(--active);
+  }
+
+  .el-active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--active);
+  }
+
+  .el-active svg {
+    fill: var(--active);
+  }
 }
 
 @font-face {
@@ -63,6 +79,7 @@
   --h-header: 4rem;
   --divider: #3e4042;
   --blue-link: #4599ff;
+  --active: #2e89ff;
 
   --primary-btn-bg: #2374e1;
   --primary-btn-text: #ffffff;
