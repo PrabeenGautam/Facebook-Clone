@@ -1,7 +1,6 @@
 import ComponentHolder from "../ComponentHolder";
 import demo from "@/assets/profile/small.jpg";
 import Separator from "../sidebar/Separator";
-import Video from "../icons/Video";
 
 function PostContainer() {
   return (

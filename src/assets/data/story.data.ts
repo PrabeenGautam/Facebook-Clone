@@ -7,7 +7,7 @@ const StoryData: StoryOuter[] = [
     profileImage:
       "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-1/336469515_756702696102464_6527397070069127752_n.jpg?stp=cp0_dst-jpg_p56x56&_nc_cat=111&ccb=1-7&_nc_sid=7206a8&_nc_ohc=4n_76qAJMZcAX9VZQRf&_nc_ht=scontent.fktm14-1.fna&oh=00_AfBSYM0-TsztEUjeCokVh9XRE4qOpMl0IwldCDDBK-qiBg&oe=6481D273",
     story:
-      "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-6/351142979_2929696923829282_7345646413176646080_n.jpg?stp=dst-jpg_p843x403&_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lnQvgtqTwG0AX9YZNiw&_nc_ht=scontent.fktm14-1.fna&oh=00_AfCvPq6YhRhiNRpXR7PuhZHixbFg5nfXPrZo5o_Rh0K4xg&oe=64824007",
+      "https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   },
   {
     _id: "dsadsadsafsaf",
