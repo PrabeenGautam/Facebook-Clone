@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import demo from "@/assets/profile/small.jpg";
 import homeSidebar from "@/assets/data/homeSidebar.data";
 import { HomeSidebarProps } from "@/types/sidebar/sidebar.types";
 import SeeMore from "@/components/buttons/SeeMore";
+import UserInfo from "@/components/users/UserInfo";
 
 function HomeSidebarMenu() {
   const [data, setData] = useState([] as HomeSidebarProps[]);
@@ -17,13 +17,7 @@ function HomeSidebarMenu() {
   return (
     <ul>
       <li>
-        <Link
-          to={"/"}
-          className="ml-2 flex items-center space-x-3 rounded-lg p-3 hover:bg-[--comment-hover]"
-        >
-          <img src={demo} className="h-9 w-9 rounded-full" alt="alt" />
-          <span className="sidebar-label">Prabin Gautam</span>
-        </Link>
+        <UserInfo link="/" />
       </li>
 
       {data.map((item) => {
