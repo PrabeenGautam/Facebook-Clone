@@ -20,6 +20,7 @@ function SignUpModal({ onClose }: SignUpProps) {
   const currentYear = date.getFullYear();
 
   const customRef = useRef<HTMLInputElement>(null);
+
   const [formData, setFormData] = useState<SignUpForm>({
     firstname: "",
     lastname: "",
@@ -59,6 +60,7 @@ function SignUpModal({ onClose }: SignUpProps) {
 
     setFormData((prev) => ({ ...prev, [name]: Number.parseInt(value) }));
   };
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     console.log(formData);

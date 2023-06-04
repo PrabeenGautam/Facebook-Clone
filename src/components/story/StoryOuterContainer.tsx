@@ -17,7 +17,7 @@ function StoryOuterContainer(props: StoryOuter) {
         </span>
       </div>
 
-      <div className="absolute left-3 top-3">
+      <div className="absolute left-2 top-3">
         <div className="h-10 w-10 overflow-hidden rounded-full">
           <img
             src={props.profileImage}
