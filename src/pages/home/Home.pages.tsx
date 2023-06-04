@@ -1,6 +1,7 @@
 import HomeLeftSidebar from "@/components/sidebar/home/HomeLeftSidebar";
 import HomeRightSidebar from "@/components/sidebar/home/HomeRightSidebar";
 import { SidebarHandlerProps } from "@/types/sidebar/sidebar.types";
+import StorySection from "@/components/home/StorySection";
 
 function Home({ show }: SidebarHandlerProps) {
   return (
@@ -12,9 +13,9 @@ function Home({ show }: SidebarHandlerProps) {
       >
         <HomeLeftSidebar />
       </div>
-      <div className="main-content flex flex-auto justify-center pt-4">
-        <div className="w-full max-w-[36.875rem] px-8">
-          This is the main section.
+      <div className="main-content flex flex-auto justify-center ">
+        <div className="mt-8 w-full max-w-[36.875rem]">
+          <StorySection />
         </div>
       </div>
       <div className="child-scroll home-sb toggle-scrollbar sticky hidden min-w-[17.5rem] max-w-[17.5rem] flex-auto overflow-y-auto py-1 md:block xll:max-w-[22.5rem]">

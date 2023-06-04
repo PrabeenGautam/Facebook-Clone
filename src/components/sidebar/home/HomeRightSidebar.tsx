@@ -41,7 +41,7 @@ function HomeRightSidebar() {
             Contacts
           </p>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1">
             <span className="center aspect-square w-8 cursor-pointer rounded-full text-[--secondary-text] hover:bg-[--comment-hover]">
               <Video width={16} />
             </span>
