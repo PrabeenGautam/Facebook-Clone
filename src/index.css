@@ -39,6 +39,14 @@
   .hide-scrollbar:hover::-webkit-scrollbar {
     width: 0.5rem;
   }
+
+  .toggle-scrollbar {
+    overflow: hidden;
+  }
+
+  .toggle-scrollbar:hover {
+    overflow: auto;
+  }
 }
 
 @font-face {
@@ -123,7 +131,7 @@ textarea {
     inset 0 0 0 0 rgba(255, 255, 255, 0.05);
 }
 
-.home-left-sb {
+.home-sb {
   height: 100%;
   max-height: calc(100vh - var(--h-header));
 }

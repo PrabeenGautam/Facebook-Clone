@@ -37,7 +37,7 @@ function HomeShortcut() {
                   className="ml-2 flex min-h-[44px] items-center space-x-3 rounded-lg px-3 hover:bg-[--comment-hover]"
                 >
                   <img
-                    className="sidebar-img my-2"
+                    className="sidebar-img my-2 rounded-lg"
                     src={item.image}
                     alt={item.label}
                   />
