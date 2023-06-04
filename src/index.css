@@ -29,6 +29,10 @@
   fill: var(--primary-btn-bg);
 }
 
+.deactivate {
+  display: none;
+}
+
 @tailwind utilities;
 
 @layer utilities {
