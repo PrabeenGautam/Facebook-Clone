@@ -6,9 +6,9 @@ function Home({ show }: SidebarHandlerProps) {
   return (
     <div className="content-container flex">
       <div
-        className={`child-scroll fixed z-50 ${
+        className={`home-left-sb child-scroll fixed z-50 ${
           show ? "" : "hidden"
-        } h-[calc(100vh-var(--h-header))] w-full min-w-[17.5rem] flex-auto bg-[--body] xl:sticky xl:block xl:max-w-[17.5rem] xl:pt-4 xll:max-w-[22.5rem]`}
+        } hide-scrollbar w-full min-w-[17.5rem] flex-auto bg-[--body] xl:sticky xl:block xl:max-w-[17.5rem] xl:pt-4 xll:max-w-[22.5rem]`}
       >
         <HomeLeftSidebar />
       </div>

@@ -22,7 +22,7 @@
 }
 
 .child-scroll {
-  @apply overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#7b7b7b] scrollbar-thumb-rounded-full;
+  @apply overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#7b7b7b] scrollbar-thumb-rounded-full;
 }
 
 .nav-active svg {
@@ -30,6 +30,16 @@
 }
 
 @tailwind utilities;
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    width: 0rem;
+  }
+
+  .hide-scrollbar:hover::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+}
 
 @font-face {
   font-family: SfProDisplayRegular;
@@ -115,4 +125,9 @@ textarea {
 
 .sidebar-more:hover .icons {
   background-color: var(--icon-hover);
+}
+
+.home-left-sb {
+  height: 100%;
+  max-height: calc(100vh - var(--h-header));
 }
