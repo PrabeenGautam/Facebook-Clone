@@ -11,7 +11,7 @@ function PostContainer() {
           <img src={demo} alt="me" />
         </div>
 
-        <div className="flex w-full cursor-pointer items-center rounded-full bg-[--comment] px-4 text-[17px] font-semibold text-[--placeholder-text]  hover:bg-[--comment-hover]">
+        <div className="flex w-full cursor-pointer items-center rounded-full bg-[--comment] px-4 text-[17px] text-[--placeholder-text]  hover:bg-[--comment-hover]">
           What's on your mind, Prabin?"
         </div>
       </div>
