@@ -1,5 +1,6 @@
 export interface StoryOuter {
-  image: string;
+  _id: string;
+  profileImage: string;
   fullname: string;
   story: string;
 }

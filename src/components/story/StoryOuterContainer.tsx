@@ -20,7 +20,7 @@ function StoryOuterContainer(props: StoryOuter) {
       <div className="absolute left-3 top-3">
         <div className="h-10 w-10 overflow-hidden rounded-full">
           <img
-            src={props.image}
+            src={props.profileImage}
             alt="me"
             className="rounded-full border-4 border-[--active]"
           />

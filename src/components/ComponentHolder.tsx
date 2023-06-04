@@ -3,7 +3,7 @@ import { ComponentProps } from "@/types/component/component.types";
 
 function ComponentHolder(props: ComponentProps) {
   return (
-    <div className="rounded-md bg-[--nav-bg] p-4">
+    <div className="rounded-md bg-[--nav-bg] p-4 pt-2">
       {props.showHeading && (
         <div className="heading group mb-2">
           <p className="title text-smm text-[--secondary-text]">

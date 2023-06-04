@@ -5,6 +5,7 @@ import Reels from "../icons/Reels";
 import demo from "@/assets/profile/big.jpg";
 import Add from "../icons/Add";
 import StoryOuterContainer from "./StoryOuterContainer";
+import storyData from "@/assets/data/story.data";
 
 function StorySection() {
   const [select, setSelect] = useState("story");
@@ -58,12 +59,17 @@ function StorySection() {
               <span className="story-label justify-center">Create Story</span>
             </div>
           </div>
-
-          <StoryOuterContainer
-            fullname="Prabin Gautam"
-            image={demo}
-            story={demo}
-          />
+          {storyData.map((story) => {
+            return (
+              <StoryOuterContainer
+                key={story._id}
+                _id={story._id}
+                fullname={story.fullname}
+                profileImage={story.profileImage}
+                story={story.story}
+              />
+            );
+          })}
         </div>
       </>
     </ComponentHolder>
