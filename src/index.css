@@ -80,6 +80,8 @@
   --divider: #3e4042;
   --blue-link: #4599ff;
   --active: #2e89ff;
+  --story-hover-bg: #202122;
+  --dark-overlay: rgba(0, 0, 0, 0.6);
 
   --primary-btn-bg: #2374e1;
   --primary-btn-text: #ffffff;
@@ -105,6 +107,11 @@ body {
   background-color: var(--body);
   scroll-behavior: smooth;
   overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
 
 body .content-container {
@@ -151,4 +158,56 @@ textarea {
 .home-sb {
   height: 100%;
   max-height: calc(100vh - var(--h-header));
+}
+
+.story-section {
+  border: 1px solid var(--story-hover-bg);
+}
+
+.story-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.story-bg::before {
+  background-image: linear-gradient(0deg, var(--dark-overlay), transparent);
+}
+
+.story-bg .story-label {
+  color: #fff;
+}
+
+.story-section:hover::before {
+  background: var(--dark-overlay);
+}
+
+.story-icon {
+  transform-style: preserve-3d;
+}
+
+.story-icon::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background-color: var(--nav-bg);
+  transform: translateZ(-10px);
+}
+
+.story-label {
+  display: flex;
+  align-items: end;
+
+  height: 100%;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  overflow: hidden;
+  color: var(--primary-text);
+
+  word-wrap: break-word;
+  line-height: 1.2308;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  user-select: none;
 }
