@@ -5,6 +5,7 @@ import { SidebarShortcut } from "@/types/sidebar/sidebar.types";
 import UpArrow from "@/components/icons/arrow/UpArrow";
 import DownArrow from "@/components/icons/arrow/DownArrow";
 import sidebarShortcut from "@/assets/data/sidebarShortcut.data";
+import SeeMore from "@/components/buttons/SeeMore";
 
 function HomeShortcut() {
   const [data, setData] = useState([] as SidebarShortcut[]);
@@ -49,14 +50,7 @@ function HomeShortcut() {
           })}
 
           <li onClick={() => setFetch((prev) => !prev)}>
-            <div className="sidebar-more ml-2 flex cursor-pointer items-center space-x-3 rounded-lg px-3 py-2 hover:bg-[--comment-hover]">
-              <div className="icons w-9 text-[--primary-text]">
-                {fetch ? <UpArrow width={20} /> : <DownArrow width={20} />}
-              </div>
-              <span className="sidebar-label">
-                {fetch ? "See Less" : "See More"}
-              </span>
-            </div>
+            <SeeMore show={fetch} />
           </li>
         </ul>
       </div>

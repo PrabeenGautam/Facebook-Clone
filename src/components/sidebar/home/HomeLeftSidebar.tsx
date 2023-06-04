@@ -1,4 +1,4 @@
-import Seperator from "../Seperator";
+import Separator from "../Separator";
 import HomeShortcut from "./HomeShortcut";
 import HomeSidebarMenu from "./HomeSidebarMenu";
 
@@ -6,7 +6,7 @@ function HomeLeftSidebar() {
   return (
     <>
       <HomeSidebarMenu />
-      <Seperator />
+      <Separator />
       <HomeShortcut />
     </>
   );

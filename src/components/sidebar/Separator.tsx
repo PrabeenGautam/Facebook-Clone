@@ -1,4 +1,4 @@
-function Seperator() {
+function Separator() {
   return (
     <div
       role="seperator"
@@ -7,4 +7,4 @@ function Seperator() {
   );
 }
 
-export default Seperator;
+export default Separator;
