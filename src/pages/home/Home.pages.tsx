@@ -1,7 +1,7 @@
 import HomeLeftSidebar from "@/components/sidebar/home/HomeLeftSidebar";
 import HomeRightSidebar from "@/components/sidebar/home/HomeRightSidebar";
 import { SidebarHandlerProps } from "@/types/sidebar/sidebar.types";
-import StorySection from "@/components/home/StorySection";
+import StorySection from "@/components/story/StorySection";
 
 function Home({ show }: SidebarHandlerProps) {
   return (

@@ -63,6 +63,14 @@
   .el-active svg {
     fill: var(--active);
   }
+
+  .preserve {
+    transform-style: preserve-3d;
+  }
+
+  .transform-back {
+    transform: translateZ(-10px);
+  }
 }
 
 @font-face {
@@ -160,17 +168,18 @@ textarea {
   max-height: calc(100vh - var(--h-header));
 }
 
+/* Story Section */
 .story-section {
   border: 1px solid var(--story-hover-bg);
 }
 
-.story-section::before {
+.story-section .story-overlay {
   content: "";
   position: absolute;
   inset: 0;
 }
 
-.story-bg::before {
+.story-section .story-overlay:not(.story-create) {
   background-image: linear-gradient(0deg, var(--dark-overlay), transparent);
 }
 
@@ -178,7 +187,15 @@ textarea {
   color: #fff;
 }
 
-.story-section:hover::before {
+.story-section .story-img {
+  transition: transform 150ms linear;
+}
+
+.story-section:hover .story-img {
+  transform: scale(1.05);
+}
+
+.story-section:hover .story-overlay {
   background: var(--dark-overlay);
 }
 
@@ -193,6 +210,10 @@ textarea {
   border-radius: 50%;
   background-color: var(--nav-bg);
   transform: translateZ(-10px);
+}
+
+.story-section:hover .story-icon::before {
+  background-color: black;
 }
 
 .story-label {
