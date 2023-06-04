@@ -34,7 +34,7 @@ function StorySection() {
                 : "rounded-lg hover:bg-[--comment-hover]"
             } w-full cursor-pointer`}
           >
-            <span className="flex h-12 items-center justify-center space-x-2 p-3 text-[--secondary-text]">
+            <span className="flex h-12 items-center justify-center space-x-2">
               <Reels width={20} />
               <span>Reels</span>
             </span>
