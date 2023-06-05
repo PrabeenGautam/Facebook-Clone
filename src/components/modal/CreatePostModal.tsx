@@ -1,4 +1,4 @@
-import Modal from "./Modal";
+import Modal from "./core/Modal";
 
 type CreatePostProps = {
   onClose: () => void;

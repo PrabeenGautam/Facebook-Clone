@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { GrFormClose } from "react-icons/gr";
 
-import { ModalProps } from "../../types/modal/modal.types";
+import { ModalProps } from "../../../types/modal/modal.types";
+import ModalHeading from "./ModalHeading";
 
 function ModalContent({ onClose, ...props }: ModalProps) {
   useEffect(() => {
@@ -18,24 +18,12 @@ function ModalContent({ onClose, ...props }: ModalProps) {
         className={`modal-container custom-shadow mx-6  h-fit animate-fade-up rounded-lg bg-white ${props.contentClassName} `}
       >
         {/* Heading Sections  */}
-        <div className="header flex justify-between border-b-2 p-4">
-          <div className="heading flex flex-col">
-            <span className="primary text-3xl/[38px] font-bold text-[#1c1e21]">
-              {props.heading}
-            </span>
-            {props.subheading && (
-              <span className="secondary mt-1 text-[#6067701] ">
-                {props.subheading}
-              </span>
-            )}
-          </div>
-
-          {props.showClose && (
-            <span className="close cursor-pointer" onClick={onClose}>
-              <GrFormClose className="h-8 w-8" />
-            </span>
-          )}
-        </div>
+        <ModalHeading
+          heading={props.heading}
+          subheading={props.subheading}
+          showClose={props.showClose}
+          onClose={onClose}
+        />
 
         {/* Content Section  */}
         <div className="content p-4">{props.children}</div>
