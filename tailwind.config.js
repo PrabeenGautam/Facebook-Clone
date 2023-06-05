@@ -38,11 +38,13 @@ export default {
         "sidebar-home": "url('./assets/image/sidemenu.png')",
         "sidebar-social": "url('./assets/image/social.png')",
         whole: "url('./assets/image/whole.png')",
+        alternate: "url('./assets/image/alternate.png')",
       },
       backgroundSize: {
         social: "38px 112px",
         sidebar: "38px 570px",
         whole: "190px 168px",
+        alternate: "34px 470px",
       },
       fontSize: {
         smm: "15px",
