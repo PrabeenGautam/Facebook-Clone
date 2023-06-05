@@ -9,6 +9,10 @@
   @apply center aspect-square w-10 cursor-pointer rounded-full bg-[--comment] hover:bg-[#4e4f50];
 }
 
+.bg-hover {
+  @apply bg-[--comment] hover:bg-[#4e4f50];
+}
+
 .nav-active {
   @apply border-b-4 border-[--primary-btn-bg] text-[--primary-btn-bg];
 }
@@ -138,5 +142,11 @@
 
   .tap-highlight {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .bg-reset {
+    background-repeat: no-repeat;
+    display: inline-block;
+    aspect-ratio: 1 / 1;
   }
 }

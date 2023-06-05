@@ -11,6 +11,12 @@
   --story-hover-bg: #202122;
   --dark-overlay: rgba(0, 0, 0, 0.6);
 
+  --border-focused: #8a8d91;
+  --card-bg: #242526;
+  --card-bg-flat: #323436;
+  --comment-bg: #3a3b3c;
+  --comment-footer-bg: #4e4f50;
+
   --primary-btn-bg: #2374e1;
   --primary-btn-text: #ffffff;
   --primary-btn-pressed: #77a7ff;
