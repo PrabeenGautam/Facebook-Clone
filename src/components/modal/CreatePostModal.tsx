@@ -23,7 +23,11 @@ function CreatePostModal({ onClose }: CreatePostProps) {
   };
 
   return (
-    <Modal heading="Create post" onClose={onClose} contentClassName="max-w-lg">
+    <Modal
+      heading="Create post"
+      onClose={onClose}
+      contentClassName="max-w-[30rem]"
+    >
       <div className="relative">
         <PostCreatorInfo />
         <div className="child-scroll max-h-[20rem]">
