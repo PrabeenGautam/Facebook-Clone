@@ -72,6 +72,7 @@ function SignUpModal({ onClose }: SignUpProps) {
       subheading="It's quick and easy."
       contentClassName="w-full max-w-sm md:max-w-md"
       onClose={onClose}
+      type={false}
     >
       <form className="space-y-3" onSubmit={handleSubmit}>
         <div className="fullname space-y-3 md:flex md:gap-4 md:space-y-0">
