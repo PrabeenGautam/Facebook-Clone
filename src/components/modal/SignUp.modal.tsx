@@ -70,7 +70,7 @@ function SignUpModal({ onClose }: SignUpProps) {
     <Modal
       heading="Sign Up"
       subheading="It's quick and easy."
-      contentClassName="w-full max-w-sm md:max-w-md"
+      contentClassName="max-w-sm md:max-w-md"
       onClose={onClose}
       type={false}
     >

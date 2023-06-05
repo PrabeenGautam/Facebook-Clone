@@ -6,11 +6,7 @@ type CreatePostProps = {
 
 function CreatePostModal({ onClose }: CreatePostProps) {
   return (
-    <Modal
-      heading="Create Post"
-      onClose={onClose}
-      headingClassName="text-center"
-    >
+    <Modal heading="Create post" onClose={onClose} contentClassName="max-w-lg">
       This is the modal
     </Modal>
   );

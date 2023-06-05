@@ -23,7 +23,7 @@ function ModalContent({ onClose, type = true, ...props }: ModalProps) {
       <div
         className={`modal-container custom-shadow mx-6  h-fit animate-fade-up rounded-lg ${
           type ? "bg-[--nav-bg]" : "bg-white"
-        } ${props.contentClassName} `}
+        } ${props.contentClassName} w-full`}
       >
         {/* Heading Sections  */}
         <ModalHeading
@@ -35,7 +35,9 @@ function ModalContent({ onClose, type = true, ...props }: ModalProps) {
         />
 
         {/* Content Section  */}
-        <div className="content p-4">{props.children}</div>
+        <div className={`content p-4 ${type ? "text-[--primary-text]" : ""}`}>
+          {props.children}
+        </div>
       </div>
     </div>
   );
