@@ -29,6 +29,7 @@
   --secondary-btn-text: #e4e6eb;
   --secondary-text: #b0b3b8;
   --secondary-text-on-media: rgba(255, 255, 255, 0.9);
+  --btn-disabled: rgba(255, 255, 255, 0.2);
 
   --filter-always-white: invert(100%);
   --filter-disabled-icon: invert(100%) opacity(30%);
