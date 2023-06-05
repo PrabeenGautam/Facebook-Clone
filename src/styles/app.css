@@ -1,0 +1,172 @@
+:root {
+  --body: #18191a;
+  --nav-bg: #242526;
+  --comment: #3a3b3c;
+  --comment-hover: #303031;
+  --icon-hover: #404546;
+  --h-header: 4rem;
+  --divider: #3e4042;
+  --blue-link: #4599ff;
+  --active: #2e89ff;
+  --story-hover-bg: #202122;
+  --dark-overlay: rgba(0, 0, 0, 0.6);
+
+  --primary-btn-bg: #2374e1;
+  --primary-btn-text: #ffffff;
+  --primary-btn-pressed: #77a7ff;
+  --primary-text: #e4e6eb;
+  --primary-text-on-media: white;
+
+  --placeholder-image: rgb(164, 167, 171);
+  --placeholder-text: #8a8d91;
+  --placeholder-text-on-media: rgba(255, 255, 255, 0.5);
+
+  --secondary-btn-bg: rgba(255, 255, 255, 0.1);
+  --secondary-btn-bg-float: #4b4c4f;
+  --secondary-btn-bg-on-dark: rgba(255, 255, 255, 0.4);
+  --secondary-btn-pressed: rgba(0, 0, 0, 0.05);
+  --secondary-btn-stroke: transparent;
+  --secondary-btn-text: #e4e6eb;
+  --secondary-text: #b0b3b8;
+  --secondary-text-on-media: rgba(255, 255, 255, 0.9);
+
+  --filter-always-white: invert(100%);
+  --filter-disabled-icon: invert(100%) opacity(30%);
+  --filter-placeholder-icon: invert(59%) sepia(11%) saturate(200%)
+    saturate(135%) hue-rotate(176deg) brightness(96%) contrast(94%);
+  --filter-primary-icon: invert(89%) sepia(6%) hue-rotate(185deg);
+  --filter-secondary-icon: invert(62%) sepia(98%) saturate(12%)
+    hue-rotate(175deg) brightness(90%) contrast(96%);
+  --filter-warning-icon: invert(77%) sepia(29%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(128%)
+    hue-rotate(359deg) brightness(102%) contrast(107%);
+  --filter-blue-link-icon: invert(73%) sepia(29%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(200%)
+    saturate(103.25%) hue-rotate(189deg) brightness(101%) contrast(101%);
+  --filter-positive: invert(37%) sepia(61%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(115%) hue-rotate(91deg)
+    brightness(97%) contrast(105%);
+  --filter-negative: invert(25%) sepia(33%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(200%) saturate(110%)
+    hue-rotate(345deg) brightness(132%) contrast(96%);
+}
+
+@font-face {
+  font-family: SfProDisplayRegular;
+  src: url("./assets/fonts/Sf Pro Display.OTF");
+}
+
+body {
+  background-color: var(--body);
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+body .content-container {
+  color: var(--primary-text);
+}
+
+.child-scroll {
+  scrollbar-gutter: stable;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input,
+select,
+textarea {
+  background-color: #fff;
+  color: #1c1e21;
+}
+
+.transition-input {
+  transition: width 2s linear;
+}
+
+.login .form,
+.custom-shadow,
+.fb-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.search-shadow {
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.home-sb {
+  height: 100%;
+  max-height: calc(100vh - var(--h-header));
+}
+
+/* Story Section */
+.story-section {
+  border: 1px solid var(--story-hover-bg);
+}
+
+.story-section .story-overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.story-section .story-overlay:not(.story-create) {
+  background-image: linear-gradient(0deg, var(--dark-overlay), transparent);
+}
+
+.story-bg .story-label {
+  color: #fff;
+}
+
+.story-section .story-img {
+  transition: transform 150ms linear;
+}
+
+.story-section:hover .story-img {
+  transform: scale(1.05);
+}
+
+.story-section:hover .story-overlay {
+  background: var(--dark-overlay);
+}
+
+.story-icon {
+  transform-style: preserve-3d;
+}
+
+.story-icon::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background-color: var(--nav-bg);
+  transform: translateZ(-10px);
+}
+
+.story-section:hover .story-icon::before {
+  background-color: black;
+}
+
+.story-label {
+  display: flex;
+  align-items: flex-end;
+
+  height: 100%;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  overflow: hidden;
+  color: var(--primary-text);
+
+  word-wrap: break-word;
+  line-height: 1.2308;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  user-select: none;
+}
