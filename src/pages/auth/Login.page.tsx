@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import fullLogo from "@/assets/svg/fb-logo-full.svg";
 import Input from "@/components/inputs/Input";
 import useTitle from "@/hooks/useTitle";
-import SignUpModal from "./SignUp.page";
+import SignUpModal from "../../components/modal/SignUp.modal";
 
 function LoginPage() {
   useTitle("Facebook - log in or sign up");
@@ -24,7 +24,7 @@ function LoginPage() {
       <section className="login flex h-screen flex-col items-center bg-gray-100">
         <div className="m-12 max-w-sm lg:flex lg:max-w-[61.25rem] lg:justify-between lg:pt-24">
           <div className="full-logo  flex flex-col items-center lg:mr-44 lg:mt-10 lg:items-start">
-            <img src={fullLogo} alt="facebook" className="w-72 lg:-ml-7" />
+            <img src={fullLogo} alt="facebook" className="full-logo-img w-72 lg:-ml-7" />
             <p className="text-center text-2xl lg:text-left">
               Connect with friends and the world around you on Facebook.
             </p>
