@@ -75,6 +75,10 @@
   .transform-back {
     transform: translateZ(-10px);
   }
+
+  .gr-icon path {
+    stroke: var(--placeholder-text);
+  }
 }
 
 @font-face {

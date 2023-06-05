@@ -18,7 +18,7 @@ interface Navbar {
 
 function Navbar({ handleSidebar }: Navbar) {
   return (
-    <div className="sticky top-0 z-50 flex  h-[--h-header] items-center bg-[--nav-bg] px-4 md:justify-between">
+    <div className="sticky top-0 z-[999] flex  h-[--h-header] items-center bg-[--nav-bg] px-4 md:justify-between">
       {/* top Section  */}
       <Searcher />
 
