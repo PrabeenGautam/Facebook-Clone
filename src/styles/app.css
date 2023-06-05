@@ -177,3 +177,7 @@ textarea {
   cursor: pointer;
   user-select: none;
 }
+
+.swiper-slide {
+  width: auto;
+}

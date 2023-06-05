@@ -6,7 +6,7 @@ import Separator from "../sidebar/Separator";
 import CreatePostModal from "../modal/CreatePostModal";
 
 function PostCreateContainer() {
-  const [closeCreatePost, setCloseCreatePost] = useState(true);
+  const [closeCreatePost, setCloseCreatePost] = useState(false);
 
   const handleClose = () => {
     setCloseCreatePost(false);

@@ -15,7 +15,7 @@ function Home({ show }: SidebarHandlerProps) {
         <HomeLeftSidebar />
       </div>
       <div className="main-content flex flex-auto justify-center ">
-        <div className="mt-6 w-full max-w-[36.875rem] space-y-4">
+        <div className="mx-4 mt-6 w-full max-w-[36.875rem] space-y-4">
           <StorySection />
           <PostCreateContainer />
         </div>
