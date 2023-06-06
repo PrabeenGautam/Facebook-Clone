@@ -1,3 +1,3 @@
-export interface FileProps extends File {}
+export interface FileProps extends FileList {}
 
-export type Files = FileProps[];
+export type Files = FileProps | [];

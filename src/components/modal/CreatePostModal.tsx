@@ -4,6 +4,9 @@ import Modal from "./core/Modal";
 import PostCreatorInfo from "../post/PostCreatorInfo";
 import UploadImageVideo from "../post/UploadImageVideo";
 import CreatePostDesc from "../post/CreatePostDesc";
+import UploadImagePreview from "../images/UploadImagePreview";
+import { PostData } from "@/types/component/post.types";
+import { Files } from "@/types/data/files.types";
 
 type CreatePostProps = {
   onClose: () => void;
@@ -12,13 +15,12 @@ type CreatePostProps = {
 function CreatePostModal({ onClose }: CreatePostProps) {
   const [error, setError] = useState("");
   const [showImageUploader, setShowImageUploader] = useState(false);
+  const [showImagePreview, setShowImagePreview] = useState(false);
 
-  const [postData, setPostData] = useState(
-    Object.freeze({
-      post: "",
-      files: [],
-    })
-  );
+  const [postData, setPostData] = useState<PostData>({
+    post: "",
+    files: [],
+  });
 
   const handleErrorAndSet = (files: FileList) => {
     setError("");
@@ -66,6 +68,7 @@ function CreatePostModal({ onClose }: CreatePostProps) {
     if (name === "files") {
       const file = event.target.files;
       setPostData((prev) => ({ ...prev, [name]: file }));
+      setShowImagePreview(true);
       return;
     }
     setPostData((prev) => ({ ...prev, [name]: value }));
@@ -84,6 +87,12 @@ function CreatePostModal({ onClose }: CreatePostProps) {
     handleErrorAndSet(event.dataTransfer.files);
   };
 
+  const closeFilePreview = () => {
+    const file: Files = [];
+    handleChange({ target: { name: "files", file } });
+    setShowImagePreview(false);
+  };
+
   return (
     <Modal
       heading="Create post"
@@ -98,10 +107,17 @@ function CreatePostModal({ onClose }: CreatePostProps) {
               setPost={postSetHandler}
               showImage={showImageUploader}
             />
-            {showImageUploader && (
+            {showImageUploader && postData.files.length === 0 && (
               <UploadImageVideo
                 onClose={() => setShowImageUploader(false)}
                 handleChange={handleErrorAndSet}
+              />
+            )}
+
+            {showImagePreview && postData.files.length > 0 && (
+              <UploadImagePreview
+                onClose={closeFilePreview}
+                files={postData.files}
               />
             )}
           </div>
