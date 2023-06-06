@@ -1,10 +1,17 @@
+import { ChangeEvent } from "react";
 import CloseButton from "../buttons/CloseButton";
 
 interface UploadImageProps {
   onClose: () => void;
+  handleChange: (files: FileList) => void;
 }
 
-function UploadImageVideo({ onClose }: UploadImageProps) {
+function UploadImageVideo({ onClose, handleChange }: UploadImageProps) {
+  function handleImageChange(event: ChangeEvent<HTMLInputElement>) {
+    if (event.target.files) {
+      handleChange(event.target.files);
+    }
+  }
   return (
     <div className="relative mt-3 flex items-center justify-between rounded-lg border border-[--divider] p-2">
       <label
@@ -24,6 +31,8 @@ function UploadImageVideo({ onClose }: UploadImageProps) {
           id="image-video"
           type="file"
           accept="image/png, image/jpeg, video/mp4"
+          multiple
+          onChange={handleImageChange}
         />
       </label>
       <CloseButton className="absolute right-4 top-4" onClose={onClose} />
