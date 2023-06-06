@@ -2,7 +2,7 @@ import { StoryOuter } from "@/types/component/story.types";
 
 function StoryOuterContainer(props: StoryOuter) {
   return (
-    <div className="story-section story-bg relative h-52 max-w-[7rem] cursor-pointer overflow-hidden rounded-lg bg-[--nav-bg]">
+    <div className="story-section story-bg relative h-52 max-w-[7rem] cursor-pointer select-none overflow-hidden rounded-lg bg-[--nav-bg]">
       <img
         src={props.story}
         alt="me"

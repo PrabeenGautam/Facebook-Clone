@@ -68,6 +68,7 @@ function StorySection() {
           ref={swiperRef}
           slidesPerView={"auto"}
           spaceBetween={7.5}
+          allowTouchMove={false}
           onSwiper={(swiper) => {
             swiper.isBeginning === true &&
               prevBtnRef.current?.classList.add("deactivate");
@@ -80,12 +81,14 @@ function StorySection() {
           onReachBeginning={() => {
             prevBtnRef.current?.classList.add("deactivate");
           }}
-          onReachEnd={() => {
-            nextBtnRef.current?.classList.add("deactivate");
+          onReachEnd={(swiper) => {
+            if (swiper.isEnd && !swiper.isBeginning) {
+              nextBtnRef.current?.classList.add("deactivate");
+            }
           }}
         >
           <SwiperSlide>
-            <div className="story-section group relative h-52 max-w-[7rem] cursor-pointer overflow-hidden rounded-lg bg-[--nav-bg]">
+            <div className="story-section group relative h-52 max-w-[7rem] cursor-pointer select-none overflow-hidden rounded-lg bg-[--nav-bg]">
               <div className="h-[10rem] overflow-hidden">
                 <img
                   src={demo}
