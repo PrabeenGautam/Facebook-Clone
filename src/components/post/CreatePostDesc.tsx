@@ -2,7 +2,7 @@ import { SyntheticEvent, useRef, useEffect, useState } from "react";
 import resetPasteStyle from "@/utils/resetPasteStyle";
 
 interface PostProps {
-  setPost: (data: string) => void;
+  setPost: (name: string, value: string) => void;
   showImage: boolean;
 }
 
@@ -26,7 +26,7 @@ function CreatePostDesc({ setPost, showImage }: PostProps) {
   const handlePostName = (event: SyntheticEvent<HTMLDivElement>) => {
     const newValue = event.currentTarget.innerText;
     handleFontChange(newValue);
-    setPost(newValue);
+    setPost("post", newValue);
     setData(newValue);
   };
 
