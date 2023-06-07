@@ -25,7 +25,7 @@ function HomeRightSidebar() {
               link="/"
               user={{
                 image:
-                  "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-1/302284818_520008266740770_192720444211066617_n.png?stp=cp0_dst-png_p86x86&_nc_cat=103&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=4KsOW95T1dsAX8jESsj&_nc_ht=scontent.fktm14-1.fna&oh=00_AfAOPDBHsu4Nd3-YfdybTM0ju8mGE4SfAZ99D3caWKL4lA&oe=647F7925",
+                  "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-1/302284818_520008266740770_192720444211066617_n.png?stp=dst-png_p320x320&_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=c6021c&_nc_ohc=Mziim3MTHZkAX9T7vN0&_nc_ht=scontent.fktm14-1.fna&oh=00_AfBwknGA3npLLx5YbXYwibT94GC-5KbX2VoGkEja9iEn1A&oe=648567E5",
                 name: "Andraware",
               }}
             />

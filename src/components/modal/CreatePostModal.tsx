@@ -6,7 +6,6 @@ import UploadImageVideo from "../post/UploadImageVideo";
 import CreatePostDesc from "../post/CreatePostDesc";
 import UploadImagePreview from "../images/UploadImagePreview";
 import { PostData } from "@/types/component/post.types";
-import { Files } from "@/types/data/files.types";
 
 type CreatePostProps = {
   onClose: () => void;
@@ -19,16 +18,21 @@ function CreatePostModal({ onClose }: CreatePostProps) {
 
   const [postData, setPostData] = useState<PostData>({
     post: "",
-    files: [],
+    uploadedFiles: [],
   });
 
   const handleErrorAndSet = (files: FileList) => {
     setError("");
 
+    const uploadedFiles = [];
+
     for (let index = 0; index < files.length; index++) {
       const file = files[index];
-      const hasSupportedFile =
-        file.type.includes("video") || file.type.includes("image");
+      const [fileType, fileExt] = file.type.split("/");
+
+      const hasSupportedFile = ["image", "video"].includes(fileType);
+      const validImageFormat = ["jpeg", "png"].includes(fileExt);
+      const validVideoFormat = fileExt === "mpeg";
 
       if (!hasSupportedFile) {
         setError(
@@ -37,27 +41,23 @@ function CreatePostModal({ onClose }: CreatePostProps) {
         return;
       }
 
-      const validImageFormat =
-        file.type.includes("jpeg") || file.type.includes("png");
-
-      const validVideoFormat = file.type.includes("mpeg");
-
-      if (file.type.includes("image") && !validImageFormat) {
+      if (fileType === "image" && !validImageFormat) {
         setError(
           `Given file: ${file.name} can not be uploaded. Try image having jpeg or png file support.`
         );
         return;
       }
 
-      if (file.type.includes("video") && !validVideoFormat) {
+      if (fileType === "video" && !validVideoFormat) {
         setError(
           `Given file: ${file.name} can not be uploaded. Try video having mpeg file support.`
         );
         return;
       }
+      uploadedFiles.push({ type: fileType, file });
     }
 
-    handleChange({ target: { name: "files", files } });
+    handleChange({ target: { name: "uploadedFiles", files: uploadedFiles } });
   };
 
   const postSetHandler = (name: string, value: string) =>
@@ -65,7 +65,7 @@ function CreatePostModal({ onClose }: CreatePostProps) {
 
   const handleChange = (event: any) => {
     const { name, value } = event.target;
-    if (name === "files") {
+    if (name === "uploadedFiles") {
       const file = event.target.files;
       setPostData((prev) => ({ ...prev, [name]: file }));
       setShowImagePreview(true);
@@ -88,8 +88,7 @@ function CreatePostModal({ onClose }: CreatePostProps) {
   };
 
   const closeFilePreview = () => {
-    const file: Files = [];
-    handleChange({ target: { name: "files", file } });
+    setPostData((prev) => ({ ...prev, uploadedFiles: [] }));
     setShowImagePreview(false);
   };
 
@@ -107,17 +106,16 @@ function CreatePostModal({ onClose }: CreatePostProps) {
               setPost={postSetHandler}
               showImage={showImageUploader}
             />
-            {showImageUploader && postData.files.length === 0 && (
+            {showImageUploader && postData.uploadedFiles.length === 0 && (
               <UploadImageVideo
                 onClose={() => setShowImageUploader(false)}
                 handleChange={handleErrorAndSet}
               />
             )}
-
-            {showImagePreview && postData.files.length > 0 && (
+            {showImagePreview && postData.uploadedFiles.length > 0 && (
               <UploadImagePreview
                 onClose={closeFilePreview}
-                files={postData.files}
+                files={postData.uploadedFiles}
               />
             )}
           </div>
@@ -168,9 +166,11 @@ function CreatePostModal({ onClose }: CreatePostProps) {
         </div>
         <button
           onClick={handlePostSubmit}
-          disabled={!Boolean(postData.post || postData.files.length > 0)}
+          disabled={
+            !Boolean(postData.post || postData.uploadedFiles.length > 0)
+          }
           className={`mt-3 h-9 w-full rounded-md px-3 ${
-            postData.post || postData.files.length > 0
+            postData.post || postData.uploadedFiles.length > 0
               ? "cursor-pointer bg-[--primary-btn-bg]"
               : "cursor-not-allowed bg-[--btn-disabled]"
           }`}

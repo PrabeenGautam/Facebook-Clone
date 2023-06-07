@@ -22,13 +22,13 @@ const sidebarShortcut: SidebarShortcut[] = [
   {
     _id: "xacbzxfeasc",
     image:
-      "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.2081-6/42630609_2166936443330818_3464735768197464064_n.png?stp=c5.5.50.50a_dst-png_p56x56&_nc_cat=1&ccb=1-7&_nc_sid=b29aad&_nc_ohc=lY6UL7AbzvMAX_fZUeC&_nc_ht=scontent.fktm14-1.fna&oh=00_AfAiMVi1E5-Ls2DkUNyPgwZU3wfqHiUPQr7oHEK0Eb05uw&oe=647F3EEF",
+      "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-1/302284818_520008266740770_192720444211066617_n.png?stp=dst-png_p320x320&_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=c6021c&_nc_ohc=Mziim3MTHZkAX9T7vN0&_nc_ht=scontent.fktm14-1.fna&oh=00_AfBwknGA3npLLx5YbXYwibT94GC-5KbX2VoGkEja9iEn1A&oe=648567E5",
     label: "8 Ball Pool",
   },
   {
     _id: "sdsdfnfgsdgsghsd",
     image:
-      "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-1/302284818_520008266740770_192720444211066617_n.png?stp=cp0_dst-png_p86x86&_nc_cat=103&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=4KsOW95T1dsAX8jESsj&_nc_ht=scontent.fktm14-1.fna&oh=00_AfAOPDBHsu4Nd3-YfdybTM0ju8mGE4SfAZ99D3caWKL4lA&oe=647F7925",
+      "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-1/302284818_520008266740770_192720444211066617_n.png?stp=dst-png_p320x320&_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=c6021c&_nc_ohc=Mziim3MTHZkAX9T7vN0&_nc_ht=scontent.fktm14-1.fna&oh=00_AfBwknGA3npLLx5YbXYwibT94GC-5KbX2VoGkEja9iEn1A&oe=648567E5",
     label: "Andraware",
   },
   {

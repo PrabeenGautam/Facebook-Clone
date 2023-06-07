@@ -1,6 +1,9 @@
-import { Files } from "../data/files.types";
+export interface UploadedFiles {
+  type: "image" | "video";
+  file: File;
+}
 
 export interface PostData {
   post: string;
-  files: Files;
+  uploadedFiles: UploadedFiles[] | [];
 }
