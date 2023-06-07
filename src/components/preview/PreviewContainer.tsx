@@ -5,7 +5,7 @@ function PreviewContainer({ files }: { files: UploadedFiles[] }) {
   const renderedFiles = Array.from(files).slice(0, 4);
   const renderedLength = renderedFiles.length;
   const remainFile = files.length - renderedLength;
-  const isEven = files.length % 2 === 0;
+  const isEven = renderedLength % 2 === 0;
 
   return (
     <>
@@ -13,12 +13,15 @@ function PreviewContainer({ files }: { files: UploadedFiles[] }) {
         return (
           <div
             key={id}
+            style={{ "--remain": `+${remainFile}` } as React.CSSProperties}
             className={`relative ${
-              id === renderedLength - 1 &&
-              remainFile > 0 &&
-              "before:absolute before:inset-0 before:bg-[--dark-overlay]"
-            } ${!isEven && id === renderedLength - 1 && "col-span-2"}`}
+              !isEven && id === renderedLength - 1 && "col-span-2"
+            }`}
           >
+            {id === renderedLength - 1 && remainFile > 0 && (
+              <span className="center absolute inset-0 inline-block bg-[--dark-overlay] text-[2rem] text-[--primary-text-on-media]">{`+${remainFile}`}</span>
+            )}
+
             {data.type === "image" && (
               <img
                 src={getFileBase64(data.file)}
