@@ -140,10 +140,6 @@
     justify-content: center;
   }
 
-  .tap-highlight {
-    -webkit-tap-highlight-color: transparent;
-  }
-
   .bg-reset {
     background-repeat: no-repeat;
     display: inline-block;
