@@ -8,18 +8,31 @@ import CreatePostModal from "../modal/CreatePostModal";
 
 function PostCreateContainer() {
   const [closeCreatePost, setCloseCreatePost] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   const handleClose = () => {
     setCloseCreatePost(false);
+    setShowPreview(false);
   };
 
   const handleOpen = () => {
     setCloseCreatePost(true);
   };
 
+  const handleOpenImage = () => {
+    setCloseCreatePost(true);
+    setShowPreview(true);
+  };
+
   return (
     <>
-      {closeCreatePost && <CreatePostModal onClose={handleClose} />}
+      {closeCreatePost && (
+        <CreatePostModal
+          onClose={handleClose}
+          show={showPreview}
+          setShow={setShowPreview}
+        />
+      )}
       <ComponentHolder>
         <div className={`mb-4 mt-2 flex space-x-2 px-2`}>
           <div className="center h-10 w-10 overflow-hidden rounded-full bg-[--comment] text-[--primary-text]">
@@ -44,7 +57,10 @@ function PostCreateContainer() {
             <p>Live Video</p>
           </span>
 
-          <span className="flex w-full cursor-pointer justify-center space-x-2 rounded-sm p-2 hover:bg-[--comment]">
+          <span
+            className="flex w-full cursor-pointer justify-center space-x-2 rounded-sm p-2 hover:bg-[--comment]"
+            onClick={handleOpenImage}
+          >
             <img src="/image/gallery.png" alt="gallery" className="h-6 w-6" />
             <p>Photo/video</p>
           </span>

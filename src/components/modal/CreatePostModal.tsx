@@ -9,11 +9,12 @@ import { PostData } from "@/types/component/post.types";
 
 type CreatePostProps = {
   onClose: () => void;
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function CreatePostModal({ onClose }: CreatePostProps) {
+function CreatePostModal({ onClose, show, setShow }: CreatePostProps) {
   const [error, setError] = useState("");
-  const [showImageUploader, setShowImageUploader] = useState(false);
   const [showImagePreview, setShowImagePreview] = useState(false);
 
   const [postData, setPostData] = useState<PostData>({
@@ -102,13 +103,10 @@ function CreatePostModal({ onClose }: CreatePostProps) {
         <div className="relative">
           <PostCreatorInfo />
           <div className="child-scroll max-h-[20rem]">
-            <CreatePostDesc
-              setPost={postSetHandler}
-              showImage={showImageUploader}
-            />
-            {showImageUploader && postData.uploadedFiles.length === 0 && (
+            <CreatePostDesc setPost={postSetHandler} showImage={show} />
+            {show && postData.uploadedFiles.length === 0 && (
               <UploadImageVideo
-                onClose={() => setShowImageUploader(false)}
+                onClose={() => setShow(false)}
                 handleChange={handleErrorAndSet}
               />
             )}
@@ -124,7 +122,7 @@ function CreatePostModal({ onClose }: CreatePostProps) {
           <span className="text-smm font-semibold">Add to your post</span>
           <div className="flex items-center space-x-1">
             <div
-              onClick={() => setShowImageUploader((prev) => !prev)}
+              onClick={() => setShow((prev) => !prev)}
               className="icons h-10 w-10 cursor-pointer bg-transparent"
               title="Photo/Video"
             >
