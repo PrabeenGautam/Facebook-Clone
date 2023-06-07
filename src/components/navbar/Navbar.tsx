@@ -24,20 +24,20 @@ function Navbar({ handleSidebar }: Navbar) {
 
       {/* // Middle Section  */}
       <div className="middle ml-[6.5rem] flex h-full w-full items-center justify-start text-[--secondary-text]  md:mr-[6.5rem] md:justify-center md:space-x-2">
-        <div className="nav-active hidden h-full max-w-[4rem] active:bg-[--comment] md:flex md:max-w-[3.5rem] md:flex-grow md:items-center md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px]">
-          <Home width={28} className="cursor-pointer select-none" />
+        <div className="nav-active hidden  h-full max-w-[4rem] cursor-pointer hover:bg-[--comment] active:bg-[--comment] md:flex md:max-w-[3.5rem] md:flex-grow md:items-center md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px]">
+          <Home width={28} className="select-none" />
         </div>
-        <div className="hidden h-full flex-grow  active:bg-[--comment] md:flex  md:max-w-[3.5rem] md:items-center md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px] ">
+        <div className="hidden h-full flex-grow cursor-pointer hover:bg-[--comment]  active:bg-[--comment] md:flex  md:max-w-[3.5rem] md:items-center md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px] ">
           <Watch width={28} className="cursor-pointer select-none" />
         </div>
-        <div className="hidden  h-full flex-grow active:bg-[--comment]  md:flex md:max-w-[3.5rem]  md:items-center md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px] ">
+        <div className="hidden  h-full flex-grow cursor-pointer hover:bg-[--comment] active:bg-[--comment]  md:flex md:max-w-[3.5rem]  md:items-center md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px] ">
           <MarketPlace width={28} className="cursor-pointer select-none" />
         </div>
-        <div className="hidden h-full flex-grow active:bg-[--comment]  md:flex md:max-w-[3.5rem] md:items-center  md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px] ">
+        <div className="hidden h-full flex-grow cursor-pointer hover:bg-[--comment] active:bg-[--comment]  md:flex md:max-w-[3.5rem] md:items-center  md:justify-center  lg:max-w-[5rem] xl:max-w-[111.6px] ">
           <Groups width={28} className="cursor-pointer select-none" />
         </div>
         <div
-          className="flex h-12 w-12 items-center justify-center active:bg-[--comment] md:h-full md:max-w-[3.5rem] md:flex-grow  lg:max-w-[5rem] xl:hidden"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center  hover:bg-[--comment] active:bg-[--comment] md:h-full md:max-w-[3.5rem] md:flex-grow  lg:max-w-[5rem] xl:hidden"
           onClick={handleSidebar}
         >
           <Hamburger width={28} className="cursor-pointer select-none" />
