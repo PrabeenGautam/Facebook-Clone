@@ -4,7 +4,7 @@ import Modal from "./core/Modal";
 import PostCreatorInfo from "../post/PostCreatorInfo";
 import UploadImageVideo from "../post/UploadImageVideo";
 import CreatePostDesc from "../post/CreatePostDesc";
-import UploadImagePreview from "../images/UploadImagePreview";
+import UploadImagePreview from "../preview/UploadImagePreview";
 import { PostData } from "@/types/component/post.types";
 
 type CreatePostProps = {
@@ -29,10 +29,10 @@ function CreatePostModal({ onClose }: CreatePostProps) {
     for (let index = 0; index < files.length; index++) {
       const file = files[index];
       const [fileType, fileExt] = file.type.split("/");
-
+      console.log(fileExt);
       const hasSupportedFile = ["image", "video"].includes(fileType);
       const validImageFormat = ["jpeg", "png"].includes(fileExt);
-      const validVideoFormat = fileExt === "mpeg";
+      const validVideoFormat = ["mpeg", "x-matroska"].includes(fileExt);
 
       if (!hasSupportedFile) {
         setError(

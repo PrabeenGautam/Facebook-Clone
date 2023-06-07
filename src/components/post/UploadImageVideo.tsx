@@ -30,7 +30,7 @@ function UploadImageVideo({ onClose, handleChange }: UploadImageProps) {
           name="file"
           id="image-video"
           type="file"
-          accept="image/png, image/jpeg, video/mp4"
+          accept="image/png, image/jpeg, video/mp4, video/x-matroska"
           multiple
           onChange={handleImageChange}
         />
