@@ -6,7 +6,7 @@ interface PostViewProps {
   onConfirm: () => void;
 }
 
-function PostViewSelector({ onClose, onConfirm }: PostViewProps) {
+function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
   const [audience, setAudience] = useState("private");
 
   useEffect(() => {}, [audience]);
@@ -126,4 +126,4 @@ function PostViewSelector({ onClose, onConfirm }: PostViewProps) {
   );
 }
 
-export default PostViewSelector;
+export default PostAudienceSelector;

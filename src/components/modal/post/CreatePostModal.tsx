@@ -8,7 +8,12 @@ import handleErrorAndUpload from "@/utils/handleErrorAndUpload";
 import { PostData, PostModalProps } from "@/types/component/post.types";
 import Modal from "../core/Modal";
 
-function CreatePostModal({ onClose, show, setShow }: PostModalProps) {
+function CreatePostModal({
+  onClose,
+  show,
+  setShow,
+  setActiveMenu,
+}: PostModalProps) {
   const [error, setError] = useState("");
   const [showImagePreview, setShowImagePreview] = useState(false);
 
@@ -68,7 +73,7 @@ function CreatePostModal({ onClose, show, setShow }: PostModalProps) {
     >
       <div onDragOver={handleDragOver} onDrop={handleDrop}>
         <div className="relative">
-          <PostCreatorInfo />
+          <PostCreatorInfo setActiveMenu={setActiveMenu} />
           <div className="child-scroll max-h-[20rem]">
             <CreatePostDesc setPost={postSetHandler} showImage={show} />
             {show && postData.uploadedFiles.length === 0 && (
@@ -141,7 +146,7 @@ function CreatePostModal({ onClose, show, setShow }: PostModalProps) {
             postData.post || postData.uploadedFiles.length > 0
               ? "cursor-pointer bg-[--primary-btn-bg]"
               : "cursor-not-allowed bg-[--btn-disabled]"
-        }`}
+          }`}
         >
           Post
         </button>

@@ -5,10 +5,12 @@ import ComponentHolder from "../ComponentHolder";
 import demo from "@/assets/profile/small.jpg";
 import Separator from "../sidebar/Separator";
 import CreatePostModal from "../modal/post/CreatePostModal";
+import PostAudienceSelector from "../modal/post/PostAudienceSelector";
 
 function PostCreateContainer() {
   const [closeCreatePost, setCloseCreatePost] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("main");
 
   const handleClose = () => {
     setCloseCreatePost(false);
@@ -24,14 +26,23 @@ function PostCreateContainer() {
     setShowPreview(true);
   };
 
+  const goToMain = () => {
+    setActiveMenu("main");
+  };
+
   return (
     <>
-      {closeCreatePost && (
+      {closeCreatePost && activeMenu === "main" && (
         <CreatePostModal
           onClose={handleClose}
           show={showPreview}
           setShow={setShowPreview}
+          setActiveMenu={setActiveMenu}
         />
+      )}
+
+      {closeCreatePost && activeMenu === "audience" && (
+        <PostAudienceSelector onClose={goToMain} onConfirm={goToMain} />
       )}
 
       <ComponentHolder>

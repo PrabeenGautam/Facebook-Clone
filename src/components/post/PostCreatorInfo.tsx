@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import React from "react";
+
 import demo from "@/assets/profile/small.jpg";
 
-function PostCreatorInfo() {
+interface PostCreatorProps {
+  setActiveMenu: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function PostCreatorInfo({ setActiveMenu }: PostCreatorProps) {
   return (
     <div className="flex items-center space-x-3 rounded-lg">
       <Link to={"/"}>
@@ -15,7 +21,12 @@ function PostCreatorInfo() {
             src="/image/lock.png"
             alt="lock"
           />
-          <span className="text-[13px] font-semibold leading-4">Only Me</span>
+          <span
+            className="cursor-pointer text-[13px] font-semibold leading-4"
+            onClick={() => setActiveMenu("audience")}
+          >
+            Only Me
+          </span>
           <i className="filter-primary inline-block h-3 w-3 bg-whole bg-no-repeat [background-position-x:-124px] [background-position-y:-150px]"></i>
         </div>
       </div>
