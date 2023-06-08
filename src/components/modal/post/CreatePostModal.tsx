@@ -1,10 +1,10 @@
 import { useState, DragEvent } from "react";
 
-import Modal from "./core/Modal";
-import PostCreatorInfo from "../post/PostCreatorInfo";
-import UploadImageVideo from "../post/UploadImageVideo";
-import CreatePostDesc from "../post/CreatePostDesc";
-import UploadImagePreview from "../preview/UploadImagePreview";
+import Modal from "../core/Modal";
+import PostCreatorInfo from "../../post/PostCreatorInfo";
+import UploadImageVideo from "../../post/UploadImageVideo";
+import CreatePostDesc from "../../post/CreatePostDesc";
+import UploadImagePreview from "../../preview/UploadImagePreview";
 import { PostData } from "@/types/component/post.types";
 
 type CreatePostProps = {

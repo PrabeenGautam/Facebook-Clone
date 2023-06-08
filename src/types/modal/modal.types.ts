@@ -4,6 +4,7 @@ export interface ModalHeadingProps {
   heading: string;
   subheading?: string;
   showClose?: boolean;
+  showPrev?: boolean;
   type?: boolean;
   onClose: () => void;
 }

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import ComponentHolder from "../ComponentHolder";
 import demo from "@/assets/profile/small.jpg";
 import Separator from "../sidebar/Separator";
-import CreatePostModal from "../modal/CreatePostModal";
+import CreatePostModal from "../modal/post/CreatePostModal";
+import PostViewSelector from "../modal/post/PostViewSelector";
 
 function PostCreateContainer() {
   const [closeCreatePost, setCloseCreatePost] = useState(false);
@@ -33,6 +34,8 @@ function PostCreateContainer() {
           setShow={setShowPreview}
         />
       )}
+
+      <PostViewSelector />
       <ComponentHolder>
         <div className={`mb-4 mt-2 flex space-x-2 px-2`}>
           <div className="center h-10 w-10 overflow-hidden rounded-full bg-[--comment] text-[--primary-text]">

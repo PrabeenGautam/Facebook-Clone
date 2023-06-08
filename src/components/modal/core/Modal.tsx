@@ -31,6 +31,7 @@ function ModalContent({ onClose, type = true, ...props }: ModalProps) {
           subheading={props.subheading}
           showClose={props.showClose}
           onClose={onClose}
+          showPrev={props.showPrev}
           type={type}
         />
 
@@ -47,6 +48,7 @@ function Modal({
   contentClassName = "w-full max-w-xl",
   subheading = "",
   showClose = true,
+  showPrev = false,
   ...props
 }: ModalProps) {
   const modalContainer = document.querySelector("#modal") as HTMLElement;
@@ -56,6 +58,7 @@ function Modal({
       contentClassName={contentClassName}
       subheading={subheading}
       showClose={showClose}
+      showPrev={showPrev}
       {...props}
     />,
     modalContainer

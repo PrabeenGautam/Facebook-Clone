@@ -1,3 +1,4 @@
+import LeftArrowFull from "@/components/icons/arrow/LeftArrowFull";
 import { ModalHeadingProps } from "@/types/modal/modal.types";
 import { GrFormClose } from "react-icons/gr";
 
@@ -27,11 +28,24 @@ function ModalHeading({ type, ...props }: ModalHeadingProps) {
         )}
       </div>
 
+      {props.showPrev && (
+        <span
+          className={`prev ${
+            type
+              ? "icons absolute left-4 top-1/2 h-9 w-9 -translate-y-1/2  bg-[--secondary-btn-bg]"
+              : ""
+          } cursor-pointer`}
+          onClick={props.onClose}
+        >
+          <i className="filter-secondary bg-reset h-5 w-5 bg-whole [background-position-x:-52px] [background-position-y:-62px]"></i>
+        </span>
+      )}
+
       {props.showClose && (
         <span
           className={`close ${
             type
-              ? "icons absolute right-3 top-1/2 h-8 w-8 -translate-y-1/2"
+              ? "icons absolute right-3 top-1/2 h-8 w-8 -translate-y-1/2  bg-[--secondary-btn-bg]"
               : ""
           } cursor-pointer`}
           onClick={props.onClose}

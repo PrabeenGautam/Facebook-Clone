@@ -50,6 +50,7 @@ export default {
       },
       fontSize: {
         smm: "15px",
+        "base-up": "17px",
       },
       colors: {
         "blue-link": "var(--blue-link)",
