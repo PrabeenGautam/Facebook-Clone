@@ -5,7 +5,7 @@ import UploadImageVideo from "../../post/UploadImageVideo";
 import CreatePostDesc from "../../post/CreatePostDesc";
 import UploadImagePreview from "../../preview/UploadImagePreview";
 import handleErrorAndUpload from "@/utils/handleErrorAndUpload";
-import { PostData, PostModalProps } from "@/types/component/post.types";
+import { PostModalProps } from "@/types/component/post.types";
 import Modal from "../core/Modal";
 
 function CreatePostModal({
@@ -13,14 +13,11 @@ function CreatePostModal({
   show,
   setShow,
   setActiveMenu,
+  postData,
+  setPostData,
 }: PostModalProps) {
   const [error, setError] = useState("");
   const [showImagePreview, setShowImagePreview] = useState(false);
-
-  const [postData, setPostData] = useState<PostData>({
-    post: "",
-    uploadedFiles: [],
-  });
 
   const handleUploadedFile = function (files: FileList) {
     const status = handleErrorAndUpload(files);
@@ -73,7 +70,10 @@ function CreatePostModal({
     >
       <div onDragOver={handleDragOver} onDrop={handleDrop}>
         <div className="relative">
-          <PostCreatorInfo setActiveMenu={setActiveMenu} />
+          <PostCreatorInfo
+            setActiveMenu={setActiveMenu}
+            audience={postData.audience}
+          />
           <div className="child-scroll max-h-[20rem]">
             <CreatePostDesc setPost={postSetHandler} showImage={show} />
             {show && postData.uploadedFiles.length === 0 && (

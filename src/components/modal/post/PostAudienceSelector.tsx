@@ -1,15 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Modal from "../core/Modal";
 
 interface PostViewProps {
   onClose: () => void;
-  onConfirm: () => void;
+  handleChange: (name: any, value: any) => void;
+  audienceValue: "Public" | "Friends" | "Only Me";
 }
 
-function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
-  const [audience, setAudience] = useState("private");
+function PostAudienceSelector({
+  onClose,
+  handleChange,
+  audienceValue,
+}: PostViewProps) {
+  const [audience, setAudience] = useState(audienceValue);
 
-  useEffect(() => {}, [audience]);
+  const onConfirm = () => {
+    handleChange("audience", audience);
+    onClose();
+  };
 
   return (
     <Modal
@@ -36,7 +44,7 @@ function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
         </div>
         <label
           className="flex cursor-pointer select-none items-center space-x-2 rounded-md p-2 hover:bg-[--comment-hover] "
-          onClick={() => setAudience("public")}
+          onClick={() => setAudience("Public")}
         >
           <div className="center aspect-square w-[60px] rounded-full bg-[--comment]">
             <img
@@ -53,7 +61,7 @@ function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
           </div>
           <i
             className={`bg-reset h-5 w-5 bg-whole ${
-              audience === "public"
+              audience === "Public"
                 ? "filter-accent [background-position:-110px_-88px]"
                 : "filter-secondary [background-position:-132px_-88px]"
             }`}
@@ -61,7 +69,7 @@ function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
         </label>
         <label
           className="flex cursor-pointer select-none items-center space-x-2 rounded-md p-2 hover:bg-[--comment-hover] "
-          onClick={() => setAudience("friends")}
+          onClick={() => setAudience("Friends")}
         >
           <div className="center aspect-square w-[60px] rounded-full bg-[--comment]">
             <img
@@ -78,7 +86,7 @@ function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
           </div>
           <i
             className={`bg-reset h-5 w-5 bg-whole ${
-              audience === "friends"
+              audience === "Friends"
                 ? "filter-accent [background-position:-110px_-88px]"
                 : "filter-secondary [background-position:-132px_-88px]"
             }`}
@@ -86,7 +94,7 @@ function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
         </label>
         <label
           className="flex cursor-pointer select-none items-center space-x-2 rounded-md p-2 hover:bg-[--comment-hover] "
-          onClick={() => setAudience("private")}
+          onClick={() => setAudience("Only Me")}
         >
           <div className="center aspect-square w-[60px] rounded-full bg-[--comment]">
             <img
@@ -100,7 +108,7 @@ function PostAudienceSelector({ onClose, onConfirm }: PostViewProps) {
           </div>
           <i
             className={`bg-reset h-5 w-5 bg-whole ${
-              audience === "private"
+              audience === "Only Me"
                 ? "filter-accent [background-position:-110px_-88px]"
                 : "filter-secondary [background-position:-132px_-88px]"
             }`}

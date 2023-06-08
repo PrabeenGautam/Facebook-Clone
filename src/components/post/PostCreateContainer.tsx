@@ -6,11 +6,18 @@ import demo from "@/assets/profile/small.jpg";
 import Separator from "../sidebar/Separator";
 import CreatePostModal from "../modal/post/CreatePostModal";
 import PostAudienceSelector from "../modal/post/PostAudienceSelector";
+import { PostData } from "@/types/component/post.types";
 
 function PostCreateContainer() {
-  const [closeCreatePost, setCloseCreatePost] = useState(false);
+  const [closeCreatePost, setCloseCreatePost] = useState(true);
   const [showPreview, setShowPreview] = useState(false);
   const [activeMenu, setActiveMenu] = useState("main");
+
+  const [postData, setPostData] = useState<PostData>({
+    post: "",
+    uploadedFiles: [],
+    audience: "Only Me",
+  });
 
   const handleClose = () => {
     setCloseCreatePost(false);
@@ -30,6 +37,10 @@ function PostCreateContainer() {
     setActiveMenu("main");
   };
 
+  const postHandleChange = (name: any, value: any) => {
+    setPostData((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <>
       {closeCreatePost && activeMenu === "main" && (
@@ -38,11 +49,17 @@ function PostCreateContainer() {
           show={showPreview}
           setShow={setShowPreview}
           setActiveMenu={setActiveMenu}
+          postData={postData}
+          setPostData={setPostData}
         />
       )}
 
       {closeCreatePost && activeMenu === "audience" && (
-        <PostAudienceSelector onClose={goToMain} onConfirm={goToMain} />
+        <PostAudienceSelector
+          onClose={goToMain}
+          handleChange={postHandleChange}
+          audienceValue={postData.audience}
+        />
       )}
 
       <ComponentHolder>

@@ -6,9 +6,15 @@ export interface UploadedFiles {
 export interface PostData {
   post: string;
   uploadedFiles: UploadedFiles[] | [];
+  audience: "Public" | "Friends" | "Only Me";
 }
 
-export interface PostModalProps {
+export interface PostDataSetProps {
+  setPostData: React.Dispatch<React.SetStateAction<PostData>>;
+  postData: PostData;
+}
+
+export interface PostModalProps extends PostDataSetProps {
   onClose: () => void;
   show: boolean;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
