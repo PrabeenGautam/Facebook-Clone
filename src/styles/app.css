@@ -56,6 +56,9 @@
   --filter-negative: invert(25%) sepia(33%) saturate(200%) saturate(200%)
     saturate(200%) saturate(200%) saturate(200%) saturate(200%) saturate(110%)
     hue-rotate(345deg) brightness(132%) contrast(96%);
+  --filter-accent: invert(40%) sepia(52%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(189%) hue-rotate(191deg) brightness(103%)
+    contrast(102%);
 }
 
 @font-face {
@@ -75,6 +78,18 @@ img {
 
 body .content-container {
   color: var(--primary-text);
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7b7b7b;
+}
+
+::-webkit-scrollbar-track {
+  background: #424242;
 }
 
 .child-scroll {

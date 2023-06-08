@@ -29,6 +29,10 @@
   @apply overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#7b7b7b] scrollbar-thumb-rounded-full;
 }
 
+.parent-scroll {
+  @apply overflow-y-auto scrollbar-thumb-[#7b7b7b];
+}
+
 .nav-active svg {
   fill: var(--primary-btn-bg);
 }
@@ -132,6 +136,11 @@
   .filter-negative {
     filter: var(--filter-negative);
     -webkit-filter: var(--filter-negative);
+  }
+
+  .filter-accent {
+    filter: var(--filter-accent);
+    -webkit-filter: var(--filter-accent);
   }
 
   .center {
