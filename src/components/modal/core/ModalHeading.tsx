@@ -1,4 +1,3 @@
-import LeftArrowFull from "@/components/icons/arrow/LeftArrowFull";
 import { ModalHeadingProps } from "@/types/modal/modal.types";
 import { GrFormClose } from "react-icons/gr";
 
