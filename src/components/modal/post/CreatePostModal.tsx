@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 import Modal from "../core/Modal";
-import { CreatePostProps, PostData } from "@/types/component/post.types";
+import { PostModalProps, PostData } from "@/types/component/post.types";
 import MainPostCreator from "./MainPostCreator";
 
-function CreatePostModal({ onClose, show, setShow }: CreatePostProps) {
+function CreatePostModal({ onClose, show, setShow }: PostModalProps) {
   const [postData, setPostData] = useState<PostData>({
     post: "",
     uploadedFiles: [],
@@ -31,7 +31,6 @@ function CreatePostModal({ onClose, show, setShow }: CreatePostProps) {
         postData={postData}
         show={show}
         setShow={setShow}
-        onClose={onClose}
       />
     </Modal>
   );

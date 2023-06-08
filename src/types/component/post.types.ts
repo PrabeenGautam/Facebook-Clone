@@ -8,8 +8,13 @@ export interface PostData {
   uploadedFiles: UploadedFiles[] | [];
 }
 
-export interface CreatePostProps {
+export interface PostModalProps {
   onClose: () => void;
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface CreatePostProps {
   show: boolean;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
 }

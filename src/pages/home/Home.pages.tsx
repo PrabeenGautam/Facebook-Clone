@@ -10,12 +10,12 @@ function Home({ show }: SidebarHandlerProps) {
       <div
         className={`child-scroll home-sb fixed z-50 ${
           show ? "" : "hidden"
-        } hide-scrollbar w-full min-w-[17.5rem] flex-auto bg-[--body] xl:sticky xl:block xl:max-w-[17.5rem] xl:py-1 xll:max-w-[22.5rem]`}
+        } hide-scrollbar w-full min-w-[17.5rem] flex-auto bg-[--body] lgg:sticky lgg:block lgg:max-w-[17.5rem] lgg:py-1 xll:max-w-[22.5rem]`}
       >
         <HomeLeftSidebar />
       </div>
       <div className="main-content flex flex-auto justify-center ">
-        <div className="mx-4 mt-6 w-full max-w-[36.875rem] space-y-4">
+        <div className="mx-8 mt-6 w-full max-w-full space-y-4 lgg:mx-4 lgg:max-w-[36.875rem]">
           <StorySection />
           <PostCreateContainer />
         </div>

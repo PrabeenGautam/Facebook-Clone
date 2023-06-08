@@ -23,7 +23,7 @@ const StoryData: StoryOuter[] = [
     profileImage:
       "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-1/327449577_662265442344605_3806527500820958723_n.jpg?stp=cp0_dst-jpg_s56x56&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=-1p_iTgj1SAAX_93nfq&_nc_ht=scontent.fktm14-1.fna&oh=00_AfCrW3iQnY_YxaC6r0q7KUYsTvvlsZ7aAD7pOf8n-VyY_A&oe=6481462A",
     story:
-      "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-6/350801281_1686113018485701_4967422348144359429_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=rk5gZ2Orhi8AX8XjLpT&_nc_ht=scontent.fktm14-1.fna&oh=00_AfAiK3OCW7VQMzoJzVJ82UcDmcxsW-n1hn48wBOaF7ZjFg&oe=6481330B",
+      "https://images.unsplash.com/photo-1685988755134-6d6457cb9ed3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   },
   {
     _id: "gadsagadasr",
@@ -39,7 +39,7 @@ const StoryData: StoryOuter[] = [
     profileImage:
       "https://scontent.fktm14-1.fna.fbcdn.net/v/t1.6435-1/68508422_3122032287935997_3710134299521974272_n.jpg?stp=dst-jpg_p100x100&_nc_cat=103&ccb=1-7&_nc_sid=7206a8&_nc_ohc=brBSPA8zx6MAX8EnqOc&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fktm14-1.fna&oh=00_AfDZ-78zkkwjO0eWrHCWHybv_4GCM_9OGMRNS7M-OmI3MQ&oe=64A3DBD1",
     story:
-      "https://scontent.fktm14-1.fna.fbcdn.net/v/t39.30808-6/347593363_596981339206741_4912894830874272144_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=T7JXgm92yA4AX8X3UwA&_nc_ht=scontent.fktm14-1.fna&oh=00_AfAzzEv97VMu45YgdWx6QNc9U0oq0Gh_xkmd5fill257JA&oe=64812CB6",
+      "https://images.unsplash.com/photo-1685945719932-8048cbc68ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   },
   {
     _id: "fdsgsdhdsfsdhnsg",

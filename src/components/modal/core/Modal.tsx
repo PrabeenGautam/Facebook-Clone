@@ -36,7 +36,11 @@ function ModalContent({ onClose, type = true, ...props }: ModalProps) {
         />
 
         {/* Content Section  */}
-        <div className={`content p-4 ${type ? "text-[--primary-text]" : ""}`}>
+        <div
+          className={`content relative p-4 ${
+            type ? "text-[--primary-text]" : ""
+          }`}
+        >
           {props.children}
         </div>
       </div>

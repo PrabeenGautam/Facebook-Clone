@@ -10,6 +10,7 @@ import { CreatePostProps, PostData } from "@/types/component/post.types";
 interface PostProps extends CreatePostProps {
   handleChange: (event: any) => void;
   postData: PostData;
+  onClose?: () => void;
 }
 
 function MainPostCreator({ postData, handleChange, show, setShow }: PostProps) {
