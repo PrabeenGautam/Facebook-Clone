@@ -6,6 +6,7 @@ import UploadImageVideo from "../../post/UploadImageVideo";
 import CreatePostDesc from "../../post/CreatePostDesc";
 import UploadImagePreview from "../../preview/UploadImagePreview";
 import { PostData } from "@/types/component/post.types";
+import handleErrorAndUpload from "@/utils/handleErrorAndUpload";
 
 type CreatePostProps = {
   onClose: () => void;
@@ -22,43 +23,14 @@ function CreatePostModal({ onClose, show, setShow }: CreatePostProps) {
     uploadedFiles: [],
   });
 
-  const handleErrorAndSet = (files: FileList) => {
-    setError("");
-
-    const uploadedFiles = [];
-
-    for (let index = 0; index < files.length; index++) {
-      const file = files[index];
-      const [fileType, fileExt] = file.type.split("/");
-      console.log(fileExt);
-      const hasSupportedFile = ["image", "video"].includes(fileType);
-      const validImageFormat = ["jpeg", "png"].includes(fileExt);
-      const validVideoFormat = ["mpeg", "x-matroska"].includes(fileExt);
-
-      if (!hasSupportedFile) {
-        setError(
-          `Given file: ${file.name} can not be uploaded. Only image and vidoe are supported.`
-        );
-        return;
-      }
-
-      if (fileType === "image" && !validImageFormat) {
-        setError(
-          `Given file: ${file.name} can not be uploaded. Try image having jpeg or png file support.`
-        );
-        return;
-      }
-
-      if (fileType === "video" && !validVideoFormat) {
-        setError(
-          `Given file: ${file.name} can not be uploaded. Try video having mpeg file support.`
-        );
-        return;
-      }
-      uploadedFiles.push({ type: fileType, file });
+  const handleUploadedFile = function (files: FileList) {
+    const status = handleErrorAndUpload(files);
+    if (status.hasError && status.message) {
+      setError(status.message);
+      return;
     }
 
-    handleChange({ target: { name: "uploadedFiles", files: uploadedFiles } });
+    handleChange({ target: { name: "uploadedFiles", files: status.data } });
   };
 
   const postSetHandler = (name: string, value: string) =>
@@ -85,12 +57,13 @@ function CreatePostModal({ onClose, show, setShow }: CreatePostProps) {
 
   const handleDrop = (event: DragEvent) => {
     event.preventDefault();
-    handleErrorAndSet(event.dataTransfer.files);
+    handleUploadedFile(event.dataTransfer.files);
   };
 
   const closeFilePreview = () => {
     setPostData((prev) => ({ ...prev, uploadedFiles: [] }));
     setShowImagePreview(false);
+    setError("");
   };
 
   return (
@@ -106,8 +79,11 @@ function CreatePostModal({ onClose, show, setShow }: CreatePostProps) {
             <CreatePostDesc setPost={postSetHandler} showImage={show} />
             {show && postData.uploadedFiles.length === 0 && (
               <UploadImageVideo
-                onClose={() => setShow(false)}
-                handleChange={handleErrorAndSet}
+                onClose={() => {
+                  setShow(false);
+                  setError("");
+                }}
+                handleChange={handleUploadedFile}
               />
             )}
             {showImagePreview && postData.uploadedFiles.length > 0 && (

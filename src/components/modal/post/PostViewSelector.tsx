@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "../core/Modal";
 
 interface PostViewProps {
@@ -8,6 +8,8 @@ interface PostViewProps {
 
 function PostViewSelector({ onClose, onConfirm }: PostViewProps) {
   const [audience, setAudience] = useState("private");
+
+  useEffect(() => {}, [audience]);
 
   return (
     <Modal
