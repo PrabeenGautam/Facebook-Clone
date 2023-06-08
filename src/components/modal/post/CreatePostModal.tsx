@@ -75,7 +75,11 @@ function CreatePostModal({
             audience={postData.audience}
           />
           <div className="child-scroll max-h-[20rem]">
-            <CreatePostDesc setPost={postSetHandler} showImage={show} />
+            <CreatePostDesc
+              setPost={postSetHandler}
+              showImage={show}
+              post={postData.post}
+            />
             {show && postData.uploadedFiles.length === 0 && (
               <UploadImageVideo
                 onClose={() => {

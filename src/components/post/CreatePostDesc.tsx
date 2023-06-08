@@ -1,14 +1,15 @@
-import { SyntheticEvent, useRef, useEffect, useState } from "react";
-import resetPasteStyle from "@/utils/resetPasteStyle";
+import useAutosizeTextArea from "@/hooks/useAutosizeTextArea";
+import { ChangeEvent, useRef, useEffect, useState } from "react";
 
 interface PostProps {
   setPost: (name: string, value: string) => void;
   showImage: boolean;
+  post: string;
 }
 
-function CreatePostDesc({ setPost, showImage }: PostProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [data, setData] = useState("");
+function CreatePostDesc({ setPost, showImage, post }: PostProps) {
+  const ref = useRef<HTMLTextAreaElement>(null);
+  const [data, setData] = useState(post);
 
   const handleFontChange = (value: string) => {
     const exceedLength = showImage || value.length > 84;
@@ -16,15 +17,19 @@ function CreatePostDesc({ setPost, showImage }: PostProps) {
     ref.current?.classList.toggle("text-2xl", !exceedLength);
   };
 
+  useAutosizeTextArea(ref.current, data);
+
   useEffect(() => {
     if (ref.current) {
-      ref.current.focus();
-      handleFontChange(ref.current.innerText);
+      handleFontChange(ref.current.value);
+      ref.current.style.height = "0px";
+      const scrollHeight = ref.current.scrollHeight;
+      ref.current.style.height = scrollHeight + "px";
     }
   }, []);
 
-  const handlePostName = (event: SyntheticEvent<HTMLDivElement>) => {
-    const newValue = event.currentTarget.innerText;
+  const handlePostName = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const newValue = event.target.value;
     handleFontChange(newValue);
     setPost("post", newValue);
     setData(newValue);
@@ -37,16 +42,15 @@ function CreatePostDesc({ setPost, showImage }: PostProps) {
       }`}
     >
       <div className="relative">
-        <div
+        <textarea
+          defaultValue={data}
           ref={ref}
           className={`relative z-10 w-full flex-auto resize-none bg-transparent  text-[--primary-text] outline-none ${
             showImage ? "text-base" : "text-2xl"
           }`}
-          contentEditable={true}
           id="post"
-          onInput={handlePostName}
-          onPaste={resetPasteStyle}
-        ></div>
+          onChange={handlePostName}
+        ></textarea>
         {!data && (
           <div
             className={`absolute top-0 z-0  text-[--secondary-text] ${
