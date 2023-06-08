@@ -33,7 +33,6 @@ const handleErrorAndUpload = (files: FileList) => {
   }
 
   return { data: uploadedFiles, hasError: false };
-  // handleChange({ target: { name: "uploadedFiles", files: uploadedFiles } });
 };
 
 export default handleErrorAndUpload;
