@@ -40,6 +40,7 @@ export default {
         whole: "url('./assets/image/whole.png')",
         alternate: "url('./assets/image/alternate.png')",
         icons: "url('./assets/image/icons.png')",
+        "icons-alternate": "url('./assets/image/icons-alternate.png')",
       },
       backgroundSize: {
         social: "38px 112px",
@@ -47,6 +48,7 @@ export default {
         whole: "190px 168px",
         alternate: "34px 470px",
         icons: "38px 162px",
+        "icons-alternate": "34px 248px",
       },
       fontSize: {
         smm: "15px",

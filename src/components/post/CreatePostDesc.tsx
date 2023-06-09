@@ -1,5 +1,6 @@
 import useAutosizeTextArea from "@/hooks/useAutosizeTextArea";
 import { ChangeEvent, useRef, useEffect, useState } from "react";
+import BackgroundSelector from "./BackgroundSelector";
 
 interface PostProps {
   setPost: (name: string, value: string) => void;
@@ -71,6 +72,7 @@ function CreatePostDesc({ setPost, showImage, post }: PostProps) {
           src="/image/color.png"
           alt="select-color"
         />
+        <BackgroundSelector />
         <i className="inline-block h-6 w-6 cursor-pointer bg-alternate bg-no-repeat object-cover [background-position-y:-60px]"></i>
       </div>
     </div>
