@@ -11,6 +11,7 @@ interface PostProps {
 function CreatePostDesc({ setPost, showImage, post }: PostProps) {
   const ref = useRef<HTMLTextAreaElement>(null);
   const [data, setData] = useState(post);
+  const [showBgSelector, setShowBgSelector] = useState(false);
 
   const handleFontChange = (value: string) => {
     const exceedLength = showImage || value.length > 84;
@@ -63,16 +64,20 @@ function CreatePostDesc({ setPost, showImage, post }: PostProps) {
         )}
       </div>
       <div
-        className={`mt-4 flex items-center justify-between ${
+        className={`mt-4 flex h-9 items-center justify-between ${
           showImage && "absolute right-2 top-0"
         }`}
       >
-        <img
-          className={`h-9 w-9 cursor-pointer ${showImage && "hidden"}`}
-          src="/image/color.png"
-          alt="select-color"
-        />
-        <BackgroundSelector />
+        {!showBgSelector ? (
+          <img
+            onClick={() => setShowBgSelector(true)}
+            className={`h-9 w-9 cursor-pointer ${showImage && "hidden"}`}
+            src="/image/color.png"
+            alt="select-color"
+          />
+        ) : (
+          <BackgroundSelector onClose={() => setShowBgSelector(false)} />
+        )}
         <i className="inline-block h-6 w-6 cursor-pointer bg-alternate bg-no-repeat object-cover [background-position-y:-60px]"></i>
       </div>
     </div>

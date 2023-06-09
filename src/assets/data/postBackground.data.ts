@@ -6,6 +6,7 @@ const postBackground = [
   { backgroundColor: "#F3546A" },
   { backgroundImage: "./image/rain.jpg" },
   { backgroundImage: "./image/black_heart.jpg" },
+  { backgroundImage: "./image/rain.jpg" },
 ];
 
 export default postBackground;

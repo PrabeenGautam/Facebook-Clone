@@ -1,11 +1,19 @@
 import postBackground from "@/assets/data/postBackground.data";
-function BackgroundSelector() {
-  const data = postBackground.slice(0, 6);
+
+interface Props {
+  onClose: () => void;
+}
+
+function BackgroundSelector({ onClose }: Props) {
+  const data = postBackground.slice(0, 8);
 
   return (
     postBackground && (
-      <div className="flex space-x-2">
-        <div className="center h-8 w-8 cursor-pointer rounded-lg bg-[--divider]">
+      <div className="flex space-x-1.5">
+        <div
+          className="center h-8 w-8 cursor-pointer rounded-lg bg-[--divider]"
+          onClick={onClose}
+        >
           <i className="filter-primary inline-block h-4 w-4 cursor-pointer bg-whole bg-no-repeat object-cover [background-position:-18px_-132px]"></i>
         </div>
 
